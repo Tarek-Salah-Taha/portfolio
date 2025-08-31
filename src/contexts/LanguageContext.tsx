@@ -1,29 +1,23 @@
 import { translations } from "@/translations/translations";
-import React, {
-  createContext,
-  useContext,
-  useState,
-  useEffect,
-  ReactNode,
-} from "react";
+import { createContext, useState, useEffect, ReactNode } from "react";
 
 type Language = "en" | "ar";
 type Direction = "ltr" | "rtl";
 
-interface LanguageContextType {
+type LanguageContextType = {
   language: Language;
   setLanguage: (lang: Language) => void;
   direction: Direction;
   t: (key: string) => string;
-}
+};
 
 const LanguageContext = createContext<LanguageContextType | undefined>(
   undefined
 );
 
-interface LanguageProviderProps {
+type LanguageProviderProps = {
   children: ReactNode;
-}
+};
 
 export const LanguageProvider = ({ children }: LanguageProviderProps) => {
   const [language, setLanguage] = useState<Language>("en");

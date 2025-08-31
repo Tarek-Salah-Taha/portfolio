@@ -64,7 +64,7 @@ const Footer = () => {
           <div className="text-center md:text-right text-muted-foreground">
             <p className="flex items-center justify-center md:justify-end gap-1">
               © {currentYear} Made with{" "}
-              <Heart size={16} className="text-red-500" /> by Your Name
+              <Heart size={16} className="text-red-500" /> by Tarek Salah
             </p>
             <p className="text-sm mt-1">{t("footer.rights")}</p>
           </div>

@@ -24,11 +24,11 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 lg:px-8">
         <div className="text-center max-w-4xl mx-auto">
           <div className="animate-fade-in">
-            <p className="text-lg md:text-xl text-muted-foreground mb-4">
+            <p className="text-lg md:text-xl text-muted-foreground mb-4 mt-6">
               {t("hero.greeting")}
             </p>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-              <span className="gradient-text">Your Name</span>
+              <span className="gradient-text">{t("hero.name")}</span>
             </h1>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground/90 mb-6">
               {t("hero.title")}

@@ -22,24 +22,8 @@ const About = () => {
                     {t("about.description")}
                   </p>
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    I specialize in building responsive web applications with
-                    clean, modern designs. My passion lies in creating seamless
-                    user experiences and optimizing performance.
+                    {t("about.description2")}
                   </p>
-                  <div className="grid grid-cols-2 gap-4 pt-4">
-                    <div className="text-center p-4 bg-primary/10 rounded-lg">
-                      <div className="text-2xl font-bold text-primary">3+</div>
-                      <div className="text-sm text-muted-foreground">
-                        Years Experience
-                      </div>
-                    </div>
-                    <div className="text-center p-4 bg-primary/10 rounded-lg">
-                      <div className="text-2xl font-bold text-primary">50+</div>
-                      <div className="text-sm text-muted-foreground">
-                        Projects Completed
-                      </div>
-                    </div>
-                  </div>
                 </div>
 
                 <div className="flex justify-center">

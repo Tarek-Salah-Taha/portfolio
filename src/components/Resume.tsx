@@ -1,16 +1,23 @@
 import { useLanguage } from "@/hooks/useLanguage";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Download, FileText, Award, Briefcase } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Download, FileText, Award, Briefcase, Eye } from "lucide-react";
+import { useState } from "react";
 
 const Resume = () => {
   const { t } = useLanguage();
+  const [open, setOpen] = useState(false);
 
   const handleDownload = () => {
-    // Create a mock PDF download - replace with actual resume file
     const link = document.createElement("a");
-    link.href = "/resume.pdf"; // Add your actual resume file to public folder
-    link.download = "Your_Name_Resume.pdf";
+    link.href = "/Tarek-Salah.pdf"; // must be inside /public
+    link.download = "Tarek-Salah.pdf";
     link.click();
   };
 
@@ -30,8 +37,9 @@ const Resume = () => {
           <Card className="glass border-primary/20 shadow-primary">
             <CardContent className="p-8 md:p-12">
               <div className="grid md:grid-cols-2 gap-8 items-center">
+                {/* Left side content */}
                 <div className="space-y-6">
-                  <div className="text-center md:text-left">
+                  <div className="text-center md:text-start">
                     <div className="inline-flex items-center justify-center w-20 h-20 bg-hero-gradient rounded-full mb-6">
                       <FileText size={32} className="text-white" />
                     </div>
@@ -71,18 +79,9 @@ const Resume = () => {
                       </div>
                     </div>
                   </div>
-
-                  <Button
-                    variant="hero"
-                    size="lg"
-                    onClick={handleDownload}
-                    className="w-full md:w-auto"
-                  >
-                    <Download size={20} className="mr-2" />
-                    {t("resume.download")}
-                  </Button>
                 </div>
 
+                {/* Animated card preview */}
                 <div className="flex justify-center">
                   <div className="relative">
                     <div className="w-64 h-80 bg-card border-2 border-primary/20 rounded-lg shadow-primary overflow-hidden">
@@ -110,6 +109,38 @@ const Resume = () => {
           </Card>
         </div>
       </div>
+
+      {/* Action buttons */}
+      <div className="animate-slide-up flex flex-col sm:flex-row gap-4 justify-center mt-12">
+        <Button
+          variant="hero"
+          size="lg"
+          onClick={handleDownload}
+          className="text-base px-8 py-3"
+        >
+          <Download size={20} className="mr-2" />
+          {t("resume.download")}
+        </Button>
+        <Button
+          variant="outline"
+          size="lg"
+          onClick={() => setOpen(true)}
+          className="text-base px-8 py-3"
+        >
+          <Eye size={20} className="mr-2" />
+          View Online
+        </Button>
+      </div>
+
+      {/* Resume Modal */}
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogContent className="max-w-4xl h-[80vh]">
+          <DialogHeader>
+            <DialogTitle>Resume Preview</DialogTitle>
+          </DialogHeader>
+          <iframe src="/Tarek-Salah.pdf" className="w-full h-full rounded-lg" />
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
