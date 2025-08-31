@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -41,8 +41,16 @@
     --radius: 0.75rem;
 
     /* Custom portfolio colors */
-    --hero-gradient: linear-gradient(135deg, hsl(250 84% 54%), hsl(270 95% 75%));
-    --hero-gradient-subtle: linear-gradient(135deg, hsl(250 84% 54% / 0.1), hsl(270 95% 75% / 0.1));
+    --hero-gradient: linear-gradient(
+      135deg,
+      hsl(250 84% 54%),
+      hsl(270 95% 75%)
+    );
+    --hero-gradient-subtle: linear-gradient(
+      135deg,
+      hsl(250 84% 54% / 0.1),
+      hsl(270 95% 75% / 0.1)
+    );
     --glass-bg: hsl(0 0% 100% / 0.8);
     --glass-border: hsl(220 15% 92% / 0.5);
     --shadow-primary: 0 10px 40px hsl(250 84% 54% / 0.15);
@@ -120,7 +128,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-inter antialiased;
+    @apply bg-background text-foreground font-sans antialiased;
   }
 
   html {
@@ -146,18 +154,35 @@
   }
 
   @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   @keyframes slideUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
   }
 
   /* Glass morphism */
