@@ -44,11 +44,10 @@ const Resume = () => {
                       <FileText size={32} className="text-white" />
                     </div>
                     <h3 className="text-2xl font-bold mb-4">
-                      Professional Resume
+                      {t("resume.subtitle")}
                     </h3>
                     <p className="text-muted-foreground mb-6">
-                      Get a comprehensive overview of my experience, education,
-                      and achievements in web development.
+                      {t("resume.experience")}
                     </p>
                   </div>
 
@@ -128,7 +127,7 @@ const Resume = () => {
           className="text-base px-8 py-3"
         >
           <Eye size={20} className="mr-2" />
-          View Online
+          {t("resume.viewOnline")}
         </Button>
       </div>
 

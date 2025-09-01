@@ -44,21 +44,24 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: <Mail size={20} />,
-      label: "Email",
-      value: "your.email@example.com",
-      href: "mailto:your.email@example.com",
+      label: "contact.emailAddress",
+      value: "tareksalah168@gmail.com",
+      href: "mailto:tareksalah168@gmail.com",
     },
     {
       icon: <Phone size={20} />,
-      label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567",
+      label: "contact.phone",
+      value: (
+        <span dir="ltr" className="inline-block">
+          +20 0100 35 35 586
+        </span>
+      ),
+      href: "tel:+2001003535586",
     },
     {
       icon: <MapPin size={20} />,
-      label: "Location",
-      value: "Your City, Country",
-      href: "#",
+      label: "contact.location",
+      value: t("contact.city"),
     },
   ];
 
@@ -137,7 +140,7 @@ const Contact = () => {
               <Card className="glass border-primary/20 shadow-primary">
                 <CardContent className="p-8">
                   <h3 className="text-xl font-semibold mb-6">
-                    Contact Information
+                    {t("contact.heading")}
                   </h3>
                   <div className="space-y-6">
                     {contactInfo.map((info, index) => (
@@ -147,7 +150,7 @@ const Contact = () => {
                         </div>
                         <div>
                           <div className="text-sm text-muted-foreground">
-                            {info.label}
+                            {t(info.label)}
                           </div>
                           <a
                             href={info.href}
@@ -166,31 +169,11 @@ const Contact = () => {
               <Card className="glass border-primary/20 shadow-primary">
                 <CardContent className="p-8">
                   <h3 className="text-xl font-semibold mb-4">
-                    Let's Work Together
+                    {t("contact.work")}
                   </h3>
                   <p className="text-muted-foreground mb-6">
-                    I'm always interested in new opportunities and challenging
-                    projects. Whether you have a question or just want to say
-                    hi, I'll try my best to get back to you!
+                    {t("contact.workDescription")}
                   </p>
-                  <div className="flex gap-4">
-                    <div className="flex-1 text-center p-4 bg-primary/10 rounded-lg">
-                      <div className="text-lg font-semibold text-primary">
-                        24h
-                      </div>
-                      <div className="text-sm text-muted-foreground">
-                        Response Time
-                      </div>
-                    </div>
-                    <div className="flex-1 text-center p-4 bg-primary/10 rounded-lg">
-                      <div className="text-lg font-semibold text-primary">
-                        100%
-                      </div>
-                      <div className="text-sm text-muted-foreground">
-                        Client Satisfaction
-                      </div>
-                    </div>
-                  </div>
                 </CardContent>
               </Card>
             </div>

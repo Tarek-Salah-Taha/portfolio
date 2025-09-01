@@ -50,6 +50,10 @@ export const translations = {
     "resume.description":
       "Download my resume to learn more about my experience and qualifications.",
     "resume.download": "Download Resume",
+    "resume.subtitle": "Professional Resume",
+    "resume.experience":
+      "Get a comprehensive overview of my experience, education, and achievements in web development.",
+    "resume.viewOnline": "View Online",
 
     // Contact Section
     "contact.title": "Get In Touch",
@@ -59,6 +63,14 @@ export const translations = {
     "contact.email": "Your Email",
     "contact.message": "Your Message",
     "contact.send": "Send Message",
+    "contact.heading": "Contact Information",
+    "contact.work": "Let's Work Together",
+    "contact.workDescription":
+      "I'm always interested in new opportunities and challenging projects. Whether you have a question or just want to say hi, I'll try my best to get back to you. Feel free to reach out!",
+    "contact.emailAddress": "Email",
+    "contact.phone": "Phone",
+    "contact.location": "Location",
+    "contact.city": "Cairo, Egypt",
 
     // Footer
     "footer.rights": "All rights reserved",
@@ -113,6 +125,10 @@ export const translations = {
     "resume.title": "السيرة الذاتية",
     "resume.description": "حمل سيرتي الذاتية لتعرف المزيد عن خبرتي ومؤهلاتي.",
     "resume.download": "تحميل السيرة الذاتية",
+    "resume.subtitle": "السيرة الذاتية المهنية",
+    "resume.experience":
+      "احصل على نظرة عامة شاملة على خبرتي وتعليمي وإنجازاتي في تطوير الويب.",
+    "resume.viewOnline": "عرض السيرة الذاتية",
 
     // Contact Section
     "contact.title": "تواصل معي",
@@ -122,6 +138,14 @@ export const translations = {
     "contact.email": "بريدك الإلكتروني",
     "contact.message": "رسالتك",
     "contact.send": "إرسال الرسالة",
+    "contact.heading": "معلومات الاتصال",
+    "contact.work": "دعونا نعمل معًا",
+    "contact.workDescription":
+      "أنا مهتم دائمًا بالفرص الجديدة والمشاريع الطموحة. سواءً كان لديك سؤال أو أردت فقط إلقاء التحية، سأبذل قصارى جهدي للرد عليك. لا تتردد في التواصل معنا!",
+    "contact.emailAddress": "البريد إلكتروني",
+    "contact.phone": "رقم الهاتف",
+    "contact.location": "الموقع",
+    "contact.city": "القاهرة، مصر",
 
     // Footer
     "footer.rights": "جميع الحقوق محفوظة",
