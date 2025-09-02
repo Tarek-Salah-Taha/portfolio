@@ -50,34 +50,6 @@ const Resume = () => {
                       {t("resume.experience")}
                     </p>
                   </div>
-
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
-                        <Briefcase size={18} className="text-primary" />
-                      </div>
-                      <div>
-                        <div className="font-semibold">Work Experience</div>
-                        <div className="text-sm text-muted-foreground">
-                          3+ years in frontend development
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
-                        <Award size={18} className="text-primary" />
-                      </div>
-                      <div>
-                        <div className="font-semibold">
-                          Education & Certifications
-                        </div>
-                        <div className="text-sm text-muted-foreground">
-                          Computer Science degree & React certifications
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
 
                 {/* Animated card preview */}

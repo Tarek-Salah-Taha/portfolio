@@ -1,6 +1,9 @@
 import { useLanguage } from "@/hooks/useLanguage";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { LuGithub } from "react-icons/lu";
+import { SlSocialLinkedin } from "react-icons/sl";
+import { CiMail } from "react-icons/ci";
+import { FaCircleArrowUp } from "react-icons/fa6";
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -8,11 +11,19 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: <Github size={20} />, href: "#", label: "GitHub" },
-    { icon: <Linkedin size={20} />, href: "#", label: "LinkedIn" },
     {
-      icon: <Mail size={20} />,
-      href: "mailto:your.email@example.com",
+      icon: <LuGithub size={20} />,
+      href: "https://github.com/Tarek-Salah-Taha",
+      label: "GitHub",
+    },
+    {
+      icon: <SlSocialLinkedin size={20} />,
+      href: "https://www.linkedin.com/in/tarek-salah-a8813b99/",
+      label: "LinkedIn",
+    },
+    {
+      icon: <CiMail size={20} />,
+      href: "mailto:tareksalah168@gmail.com",
       label: "Email",
     },
   ];
@@ -24,50 +35,34 @@ const Footer = () => {
   return (
     <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-4 lg:px-8 py-12">
-        <div className="grid md:grid-cols-3 gap-8 items-center">
-          {/* Logo & Description */}
-          <div className="text-center md:text-left">
-            <button
-              onClick={scrollToTop}
-              className="font-bold text-2xl gradient-text hover:scale-105 transition-transform duration-300"
+        {/* Social Links */}
+        <div className="flex justify-center gap-4  mb-6">
+          {socialLinks.map((link, index) => (
+            <Button
+              key={index}
+              variant="ghost"
+              size="icon"
+              asChild
+              className="rounded-full hover:bg-primary/10 hover:text-primary transition-all duration-300"
             >
-              Portfolio
-            </button>
-            <p className="text-muted-foreground mt-2">
-              Frontend Developer specializing in React & Next.js
-            </p>
-          </div>
-
-          {/* Social Links */}
-          <div className="flex justify-center space-x-4">
-            {socialLinks.map((link, index) => (
-              <Button
-                key={index}
-                variant="ghost"
-                size="icon"
-                asChild
-                className="rounded-full hover:bg-primary/10 hover:text-primary transition-all duration-300"
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={link.label}
               >
-                <a
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={link.label}
-                >
-                  {link.icon}
-                </a>
-              </Button>
-            ))}
-          </div>
+                {link.icon}
+              </a>
+            </Button>
+          ))}
+        </div>
 
-          {/* Copyright */}
-          <div className="text-center md:text-right text-muted-foreground">
-            <p className="flex items-center justify-center md:justify-end gap-1">
-              © {currentYear} Made with{" "}
-              <Heart size={16} className="text-red-500" /> by Tarek Salah
-            </p>
-            <p className="text-sm mt-1">{t("footer.rights")}</p>
-          </div>
+        {/* Copyright */}
+        <div className="text-center text-muted-foreground">
+          <p className="flex items-center justify-center gap-1 text-sm">
+            © {currentYear} {t("footer.me")}
+          </p>
+          <p className="text-xs mt-1">{t("footer.rights")}</p>
         </div>
 
         {/* Back to Top Button */}
@@ -77,7 +72,8 @@ const Footer = () => {
             onClick={scrollToTop}
             className="hover:bg-primary/10 hover:text-primary transition-all duration-300"
           >
-            ↑ Back to Top
+            <FaCircleArrowUp />
+            {t("footer.backToTop")}
           </Button>
         </div>
       </div>

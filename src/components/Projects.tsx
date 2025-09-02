@@ -1,7 +1,8 @@
 import { useLanguage } from "@/hooks/useLanguage";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, CodeXml } from "lucide-react";
+import { FiExternalLink } from "react-icons/fi";
+import { FaGithub, FaStar } from "react-icons/fa";
 import { useState } from "react";
 
 const Projects = () => {
@@ -18,6 +19,7 @@ const Projects = () => {
       image: "/smartcart.jpg",
       github: "https://github.com/Tarek-Salah-Taha/smartCart",
       live: "https://smartcart-final.netlify.app/",
+      isFeatured: true,
     },
     {
       id: 2,
@@ -28,6 +30,7 @@ const Projects = () => {
       image: "/hotelya.jpg",
       github: "https://github.com/Tarek-Salah-Taha/hotelya",
       live: "https://hotelya-eosin.vercel.app/",
+      isFeatured: true,
     },
     {
       id: 3,
@@ -38,6 +41,7 @@ const Projects = () => {
       image: "/hotelya.jpg",
       github: "https://github.com/Tarek-Salah-Taha/portfolio", // Update with actual URL
       live: "https://your-portfolio.com", // Update with actual URL
+      isFeatured: false,
     },
     {
       id: 4,
@@ -48,6 +52,7 @@ const Projects = () => {
       image: "/hotelya.jpg",
       github: "https://github.com/Tarek-Salah-Taha/task-manager", // Update with actual URL
       live: "https://your-taskmanager.com", // Update with actual URL
+      isFeatured: false,
     },
   ];
 
@@ -96,6 +101,16 @@ const Projects = () => {
               onMouseEnter={() => setHoveredCard(project.id)}
               onMouseLeave={() => setHoveredCard(null)}
             >
+              {/* Featured badge */}
+              {project.isFeatured && (
+                <div className="absolute top-3 start-3 z-20">
+                  <div className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm font-medium shadow-md">
+                    <FaStar className="text-xs" />
+                    <span>{t("projects.featured")}</span>
+                  </div>
+                </div>
+              )}
+
               {/* Gradient accent bar */}
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500"></div>
 
@@ -123,7 +138,7 @@ const Projects = () => {
                       onClick={(e) => handleButtonClick(project.github, e)}
                       disabled={!project.github || project.github === "#"}
                     >
-                      <CodeXml size={16} />
+                      <FaGithub size={16} />
                     </Button>
                     <Button
                       variant="default"
@@ -132,7 +147,7 @@ const Projects = () => {
                       onClick={(e) => handleButtonClick(project.live, e)}
                       disabled={!project.live || project.live === "#"}
                     >
-                      <ExternalLink size={16} />
+                      <FiExternalLink size={16} />
                     </Button>
                   </div>
                 </div>
@@ -166,7 +181,7 @@ const Projects = () => {
                     onClick={(e) => handleButtonClick(project.github, e)}
                     disabled={!project.github || project.github === "#"}
                   >
-                    <CodeXml size={16} className="mr-2" />
+                    <FaGithub size={16} className="mr-2" />
                     {t("projects.viewCode")}
                   </Button>
                   <Button
@@ -176,7 +191,7 @@ const Projects = () => {
                     onClick={(e) => handleButtonClick(project.live, e)}
                     disabled={!project.live || project.live === "#"}
                   >
-                    <ExternalLink size={16} className="mr-2" />
+                    <FiExternalLink size={16} className="mr-2" />
                     {t("projects.viewLive")}
                   </Button>
                 </div>

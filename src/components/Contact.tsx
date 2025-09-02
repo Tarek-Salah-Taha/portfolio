@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/usetoast";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa6";
 import { useLanguage } from "@/hooks/useLanguage";
 
 const Contact = () => {
@@ -62,6 +63,16 @@ const Contact = () => {
       icon: <MapPin size={20} />,
       label: "contact.location",
       value: t("contact.city"),
+    },
+    {
+      icon: <FaWhatsapp size={20} />,
+      label: "contact.whatsapp",
+      value: (
+        <span dir="ltr" className="inline-block">
+          +20 0100 35 35 586
+        </span>
+      ),
+      href: "https://wa.me/2001003535586",
     },
   ];
 

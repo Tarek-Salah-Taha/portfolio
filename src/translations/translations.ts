@@ -44,6 +44,7 @@ export const translations = {
     "projects.viewLive": "Live Demo",
     "projects.description":
       "A selection of projects that showcase my skills and passion for creating exceptional web experiences.",
+    "projects.featured": "Featured Project",
 
     // Resume Section
     "resume.title": "Resume",
@@ -71,9 +72,13 @@ export const translations = {
     "contact.phone": "Phone",
     "contact.location": "Location",
     "contact.city": "Cairo, Egypt",
+    "contact.whatsapp": "WhatsApp",
 
     // Footer
-    "footer.rights": "All rights reserved",
+    "footer.rights": "All rights reserved.",
+    "footer.me":
+      "Made with ❤️ by Tarek Salah – Frontend Developer specializing in React & Next.js.",
+    "footer.backToTop": "Back to Top",
   },
   ar: {
     // Navigation
@@ -120,6 +125,7 @@ export const translations = {
     "projects.viewLive": "عرض مباشر",
     "projects.description":
       "مجموعة مختارة من المشاريع التي تبرز مهاراتي وشغفي في إنشاء تجارب ويب استثنائية.",
+    "projects.featured": "مشروع مميز",
 
     // Resume Section
     "resume.title": "السيرة الذاتية",
@@ -133,7 +139,7 @@ export const translations = {
     // Contact Section
     "contact.title": "تواصل معي",
     "contact.description":
-      "أنا دائماً مستعد لمناقشة الفرص الجديدة والمشاريع المثيرة.",
+      "أنا دائمًا منفتح لمناقشة الفرص الجديدة والمشاريع المثيرة للاهتمام.",
     "contact.name": "اسمك",
     "contact.email": "بريدك الإلكتروني",
     "contact.message": "رسالتك",
@@ -146,8 +152,12 @@ export const translations = {
     "contact.phone": "رقم الهاتف",
     "contact.location": "الموقع",
     "contact.city": "القاهرة، مصر",
+    "contact.whatsapp": "واتساب",
 
     // Footer
-    "footer.rights": "جميع الحقوق محفوظة",
+    "footer.rights": "جميع الحقوق محفوظة.",
+    "footer.me":
+      "صُنع بحب ❤️ بواسطة طارق صلاح – مطوّر واجهات أمامية متخصص في React و Next.js.",
+    "footer.backToTop": "العودة إلى الأعلى",
   },
 };

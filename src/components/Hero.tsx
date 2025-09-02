@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/hooks/useLanguage";
-import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
+import { LuGithub } from "react-icons/lu";
+import { SlSocialLinkedin } from "react-icons/sl";
+import { CiMail } from "react-icons/ci";
+import { FaCircleArrowDown } from "react-icons/fa6";
 import heroBackground from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
@@ -59,27 +62,46 @@ const Hero = () => {
           </div>
 
           {/* Social Links */}
-          <div className="animate-slide-up flex justify-center space-x-6 mb-12">
+          <div className="animate-slide-up flex justify-center gap-6 mb-12">
             <Button
               variant="ghost"
               size="icon"
-              className="rounded-full hover:bg-primary/10"
+              asChild
+              className="rounded-full hover:bg-primary/10 text-foreground hover:text-primary"
             >
-              <Github size={20} />
+              <a
+                href="https://github.com/Tarek-Salah-Taha"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <LuGithub size={20} />
+              </a>
             </Button>
+
             <Button
               variant="ghost"
               size="icon"
-              className="rounded-full hover:bg-primary/10"
+              asChild
+              className="rounded-full hover:bg-primary/10 text-foreground hover:text-primary"
             >
-              <Linkedin size={20} />
+              <a
+                href="https://www.linkedin.com/in/tarek-salah-a8813b99/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SlSocialLinkedin size={20} />
+              </a>
             </Button>
+
             <Button
               variant="ghost"
               size="icon"
-              className="rounded-full hover:bg-primary/10"
+              asChild
+              className="rounded-full hover:bg-primary/10 text-foreground hover:text-primary"
             >
-              <Mail size={20} />
+              <a href="mailto:tareksalah168@gmail.com">
+                <CiMail size={20} />
+              </a>
             </Button>
           </div>
 
@@ -89,9 +111,9 @@ const Hero = () => {
               variant="ghost"
               size="icon"
               onClick={() => scrollToSection("about")}
-              className="rounded-full hover:bg-primary/10"
+              className="rounded-full hover:bg-primary/10 text-foreground hover:text-primary"
             >
-              <ArrowDown size={20} />
+              <FaCircleArrowDown size={20} />
             </Button>
           </div>
         </div>
