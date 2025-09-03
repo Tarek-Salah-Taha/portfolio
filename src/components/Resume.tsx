@@ -7,7 +7,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Download, FileText, Award, Briefcase, Eye } from "lucide-react";
+import { Download, FileText, Eye } from "lucide-react";
 import { useState } from "react";
 
 const Resume = () => {

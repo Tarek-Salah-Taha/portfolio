@@ -3,7 +3,7 @@ import { useLanguage } from "@/hooks/useLanguage";
 import { LuGithub } from "react-icons/lu";
 import { SlSocialLinkedin } from "react-icons/sl";
 import { CiMail } from "react-icons/ci";
-import { FaCircleArrowDown } from "react-icons/fa6";
+import { FaCircleArrowDown, FaWhatsapp } from "react-icons/fa6";
 import heroBackground from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
@@ -101,6 +101,21 @@ const Hero = () => {
             >
               <a href="mailto:tareksalah168@gmail.com">
                 <CiMail size={20} />
+              </a>
+            </Button>
+
+            <Button
+              variant="ghost"
+              size="icon"
+              asChild
+              className="rounded-full hover:bg-primary/10 text-foreground hover:text-primary"
+            >
+              <a
+                href="https://wa.me/2001003535586"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaWhatsapp size={20} />
               </a>
             </Button>
           </div>

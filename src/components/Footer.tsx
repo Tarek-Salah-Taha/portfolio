@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { LuGithub } from "react-icons/lu";
 import { SlSocialLinkedin } from "react-icons/sl";
 import { CiMail } from "react-icons/ci";
-import { FaCircleArrowUp } from "react-icons/fa6";
+import { FaCircleArrowUp, FaWhatsapp } from "react-icons/fa6";
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -25,6 +25,11 @@ const Footer = () => {
       icon: <CiMail size={20} />,
       href: "mailto:tareksalah168@gmail.com",
       label: "Email",
+    },
+    {
+      icon: <FaWhatsapp size={20} />,
+      href: "https://wa.me/2001003535586",
+      label: "WhatsApp",
     },
   ];
 

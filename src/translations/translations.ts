@@ -45,6 +45,27 @@ export const translations = {
     "projects.description":
       "A selection of projects that showcase my skills and passion for creating exceptional web experiences.",
     "projects.featured": "Featured Project",
+    "projects.smartcart.title": "SmartCart E-commerce",
+    "projects.smartcart.description":
+      "A modern React e-commerce app for seamless shopping with guest and user flows.",
+    "projects.smartcart.features": [
+      "Guest + authenticated cart handling",
+      "Favorites management",
+      "Product filters & search",
+      "Responsive design",
+      "Local storage + Supabase integration",
+    ],
+
+    "projects.hotelya.title": "Hotelya Booking App",
+    "projects.hotelya.description":
+      "A Next.js booking platform for exploring, filtering, and reserving hotels.",
+    "projects.hotelya.features": [
+      "Advanced search & filters",
+      "Hotel + room listings",
+      "Real-time bookings with Supabase",
+      "Localization & multi-language",
+      "Responsive design",
+    ],
 
     // Resume Section
     "resume.title": "Resume",
@@ -73,11 +94,17 @@ export const translations = {
     "contact.location": "Location",
     "contact.city": "Cairo, Egypt",
     "contact.whatsapp": "WhatsApp",
+    "contact.sent": "Message sent!",
+    "contact.thankYou":
+      "Thank you for your message. I'll get back to you soon.",
+    "contact.error": "Error",
+    "contact.errorMessage": "Failed to send message. Please try again later.",
+    "contact.sending": "Sending...",
 
     // Footer
     "footer.rights": "All rights reserved.",
     "footer.me":
-      "Made with ❤️ by Tarek Salah – Frontend Developer specializing in React & Next.js.",
+      "Created by Tarek Salah – Frontend Developer specializing in React & Next.js.",
     "footer.backToTop": "Back to Top",
   },
   ar: {
@@ -126,6 +153,27 @@ export const translations = {
     "projects.description":
       "مجموعة مختارة من المشاريع التي تبرز مهاراتي وشغفي في إنشاء تجارب ويب استثنائية.",
     "projects.featured": "مشروع مميز",
+    "projects.smartcart.title": "متجر SmartCart الإلكتروني",
+    "projects.smartcart.description":
+      "تطبيق تجارة إلكترونية حديث باستخدام React لتجربة تسوق سلسة للمستخدمين والضيوف.",
+    "projects.smartcart.features": [
+      "عربة للضيوف والمستخدمين المسجلين",
+      "إدارة المفضلة",
+      "بحث وفلاتر للمنتجات",
+      "تصميم متجاوب",
+      "تكامل مع التخزين المحلي و Supabase",
+    ],
+
+    "projects.hotelya.title": "تطبيق حجز الفنادق Hotelya",
+    "projects.hotelya.description":
+      "منصة حجز فنادق مبنية بـ Next.js لاستكشاف وحجز العقارات بسهولة.",
+    "projects.hotelya.features": [
+      "بحث متقدم مع فلاتر",
+      "قائمة الفنادق والغرف",
+      "حجوزات فورية باستخدام Supabase",
+      "دعم تعدد اللغات",
+      "تصميم متجاوب",
+    ],
 
     // Resume Section
     "resume.title": "السيرة الذاتية",
@@ -153,11 +201,16 @@ export const translations = {
     "contact.location": "الموقع",
     "contact.city": "القاهرة، مصر",
     "contact.whatsapp": "واتساب",
+    "contact.sent": "تم إرسال الرسالة!",
+    "contact.thankYou": "شكرًا لك على رسالتك. سأتواصل معك قريبًا.",
+    "contact.error": "خطأ",
+    "contact.errorMessage": "فشل إرسال الرسالة. يُرجى المحاولة لاحقًا.",
+    "contact.sending": "إرسال...",
 
     // Footer
     "footer.rights": "جميع الحقوق محفوظة.",
     "footer.me":
-      "صُنع بحب ❤️ بواسطة طارق صلاح – مطوّر واجهات أمامية متخصص في React و Next.js.",
+      "صُنع بواسطة طارق صلاح – مطوّر واجهات أمامية متخصص في React و Next.js.",
     "footer.backToTop": "العودة إلى الأعلى",
   },
 };

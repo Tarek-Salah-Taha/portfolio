@@ -6,8 +6,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/usetoast";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
-import { FaWhatsapp } from "react-icons/fa6";
 import { useLanguage } from "@/hooks/useLanguage";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
   const { t } = useLanguage();
@@ -30,16 +30,28 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      await emailjs.send(
+        "service_qeoo5z9",
+        "template_ybe735t",
+        formData,
+        "Wk7LJue9Px793N7qM"
+      );
 
-    toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    });
+      toast({
+        title: t("contact.sent"),
+        description: t("contact.thankYou"),
+      });
 
-    setFormData({ name: "", email: "", message: "" });
-    setIsSubmitting(false);
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      toast({
+        title: t("contact.error"),
+        description: t("contact.errorMessage"),
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -63,16 +75,6 @@ const Contact = () => {
       icon: <MapPin size={20} />,
       label: "contact.location",
       value: t("contact.city"),
-    },
-    {
-      icon: <FaWhatsapp size={20} />,
-      label: "contact.whatsapp",
-      value: (
-        <span dir="ltr" className="inline-block">
-          +20 0100 35 35 586
-        </span>
-      ),
-      href: "https://wa.me/2001003535586",
     },
   ];
 
@@ -140,7 +142,7 @@ const Contact = () => {
                     className="w-full"
                   >
                     <Send size={18} className="mr-2" />
-                    {isSubmitting ? "Sending..." : t("contact.send")}
+                    {isSubmitting ? t("contact.sending") : t("contact.send")}
                   </Button>
                 </form>
               </CardContent>

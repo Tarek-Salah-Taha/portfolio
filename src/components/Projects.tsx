@@ -12,10 +12,21 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "smartCart E-commerce",
-      description:
-        "A modern e-commerce platform built with Next.js, featuring user authentication, payment integration, and admin dashboard.",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe"],
+      title: t("projects.smartcart.title"),
+      description: t("projects.smartcart.description"),
+      features: t("projects.smartcart.features"),
+      technologies: [
+        "React",
+        "TypeScript",
+        "React Router",
+        "Redux Toolkit",
+        "React Query",
+        "Supabase",
+        "Tailwind CSS",
+        "Framer Motion",
+        "React Icons",
+        "React Hot Toast",
+      ],
       image: "/smartcart.jpg",
       github: "https://github.com/Tarek-Salah-Taha/smartCart",
       live: "https://smartcart-final.netlify.app/",
@@ -23,10 +34,22 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Hotelya Booking App",
-      description:
-        "A property listing application with advanced search filters, virtual tours, and agent contact system.",
-      technologies: ["React", "TypeScript", "Google Maps API", "Firebase"],
+      title: t("projects.hotelya.title"),
+      description: t("projects.hotelya.description"),
+      features: t("projects.hotelya.features"),
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "React",
+        "Tailwind CSS",
+        "Supabase",
+        "Next Intl",
+        "React Hook Form",
+        "React Hot Toast",
+        "React Icons",
+        "React Datepicker",
+        "Framer Motion",
+      ],
       image: "/hotelya.jpg",
       github: "https://github.com/Tarek-Salah-Taha/hotelya",
       live: "https://hotelya-eosin.vercel.app/",
@@ -161,6 +184,15 @@ const Projects = () => {
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {project.description}
                 </p>
+
+                {/* Features - Fixed with type guard */}
+                {project.features && Array.isArray(project.features) && (
+                  <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
+                    {project.features.map((feat: string, idx: number) => (
+                      <li key={idx}>{feat}</li>
+                    ))}
+                  </ul>
+                )}
 
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
