@@ -57,26 +57,34 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "Portfolio Website",
-      description:
-        "A responsive portfolio website showcasing modern web development practices with animations and interactive elements.",
-      technologies: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
-      image: "/hotelya.jpg",
-      github: "https://github.com/Tarek-Salah-Taha/portfolio", // Update with actual URL
-      live: "https://your-portfolio.com", // Update with actual URL
+      title: t("projects.expensify.title"),
+      description: t("projects.expensify.description"),
+      features: t("projects.expensify.features"),
+
+      technologies: [
+        "React",
+        "Tailwind CSS",
+        "i18next",
+        "Context API",
+        "Supabase",
+        "React Icons",
+      ],
+      image: "/expensify.jpg",
+      github: "https://github.com/Tarek-Salah-Taha/Expensify",
+      live: "https://expensify-six-drab.vercel.app/",
       isFeatured: false,
     },
-    {
-      id: 4,
-      title: "Task Management App",
-      description:
-        "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      technologies: ["React", "TypeScript", "Node.js", "Socket.io"],
-      image: "/hotelya.jpg",
-      github: "https://github.com/Tarek-Salah-Taha/task-manager", // Update with actual URL
-      live: "https://your-taskmanager.com", // Update with actual URL
-      isFeatured: false,
-    },
+    // {
+    //   id: 4,
+    //   title: "Task Management App",
+    //   description:
+    //     "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
+    //   technologies: ["React", "TypeScript", "Node.js", "Socket.io"],
+    //   image: "/hotelya.jpg",
+    //   github: "https://github.com/Tarek-Salah-Taha/task-manager", // Update with actual URL
+    //   live: "https://your-taskmanager.com", // Update with actual URL
+    //   isFeatured: false,
+    // },
   ];
 
   // Enhanced function to handle button clicks with better error handling

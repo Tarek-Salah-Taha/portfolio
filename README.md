@@ -15,12 +15,6 @@ A modern, responsive portfolio website built with **Next.js**, **React**, and **
 
 ---
 
-## 📸 Screenshots
-
-> _(Add screenshots or GIFs of your portfolio here)_
-
----
-
 ## 🛠️ Tech Stack
 
 - **Frontend:** React, Next.js, TypeScript
@@ -32,7 +26,7 @@ A modern, responsive portfolio website built with **Next.js**, **React**, and **
 
 ## 🔥 Projects Highlighted
 
-### 🏨 [Hotelya](https://your-live-demo-link.com)
+### 🏨 [Hotelya](https://hotelya-eosin.vercel.app/)
 
 A hotel booking platform built with **Next.js** and **Supabase**.
 
@@ -40,7 +34,7 @@ A hotel booking platform built with **Next.js** and **Supabase**.
 - Booking system with authentication
 - Multilingual (EN/AR) support
 
-### 🛒 [SmartCart](https://your-live-demo-link.com)
+### 🛒 [SmartCart](https://smartcart-final.netlify.app/)
 
 An e-commerce shopping cart app built with **React**.
 
@@ -48,13 +42,21 @@ An e-commerce shopping cart app built with **React**.
 - State management with Redux Toolkit
 - Local storage sync for guest users
 
+### 💰 [Expensify](https://expensify-six-drab.vercel.app/)
+
+A personal expense tracker built with **React**, **Supabase**, and **Tailwind CSS**.
+
+- Expense management (add, edit, delete, categorize)
+- Local storage + Supabase integration
+- Responsive design with dark/light mode
+- Multilingual (EN/AR) support
+- Charts & statistics visualization
+
 ---
 
 ## 📬 Contact
 
-- **Portfolio:** [your-portfolio-link.com](https://your-portfolio-link.com)
-- **LinkedIn:** [linkedin.com/in/yourusername](https://linkedin.com/in/yourusername)
-- **GitHub:** [github.com/yourusername](https://github.com/yourusername)
-- **Email:** your@email.com
-
----
+- **Portfolio:** [https://portfolio-nine-pearl-94.vercel.app/](https://portfolio-nine-pearl-94.vercel.app/)
+- **LinkedIn:** [linkedin.com/in/tarek-salah-a8813b99](https://www.linkedin.com/in/tarek-salah-a8813b99/)
+- **GitHub:** [github.com/Tarek-Salah-Taha](https://github.com/Tarek-Salah-Taha/)
+- **Email:** tareksalah168@gmail.com

@@ -119,7 +119,9 @@ const Navigation = () => {
                 <button
                   key={item.key}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-left p-2 text-foreground hover:text-primary transition-colors font-medium"
+                  className={`${
+                    language === "ar" ? "text-right" : "text-left"
+                  } p-2 text-foreground hover:text-primary transition-colors font-medium`}
                 >
                   {t(`nav.${item.key}`)}
                 </button>

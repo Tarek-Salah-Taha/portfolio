@@ -67,6 +67,17 @@ export const translations = {
       "Responsive design",
     ],
 
+    "projects.expensify.title": "Expensify: Expense Tracker App",
+    "projects.expensify.description":
+      "Expensify helps you manage your daily expenses with a clean UI, dark/light mode support, and multi-language support.",
+    "projects.expensify.features": [
+      "Expense management (add, edit, delete, categorize)",
+      "Local storage + Supabase integration",
+      "Responsive design with Tailwind CSS",
+      "Dark & light mode",
+      "Internationalization (English & Arabic)",
+    ],
+
     // Resume Section
     "resume.title": "Resume",
     "resume.description":
@@ -173,6 +184,17 @@ export const translations = {
       "حجوزات فورية باستخدام Supabase",
       "دعم تعدد اللغات",
       "تصميم متجاوب",
+    ],
+
+    "projects.expensify.title": "Expensify: تطبيق تتبع النفقات",
+    "projects.expensify.description":
+      "يساعدك تطبيق Expensify على إدارة نفقاتك اليومية من خلال واجهة مستخدم عصرية ودعم الوضع الداكن/الفاتح، ودعم اللغات المتعددة.",
+    "projects.expensify.features": [
+      "إدارة المصاريف (إضافة، تعديل، حذف، تصنيف)",
+      "التخزين المحلي + التكامل مع Supabase",
+      "تصميم متجاوب باستخدام Tailwind CSS",
+      "الوضع الداكن والفاتح",
+      "تعدد اللغات (الإنجليزية والعربية)",
     ],
 
     // Resume Section
