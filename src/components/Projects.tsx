@@ -29,7 +29,7 @@ const Projects = () => {
       ],
       image: "/smartcart.jpg",
       github: "https://github.com/Tarek-Salah-Taha/smartCart",
-      live: "https://smartcart-final.netlify.app/",
+      live: "https://smart-cart-nu.vercel.app/",
       isFeatured: true,
     },
     {

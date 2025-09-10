@@ -34,7 +34,7 @@ A hotel booking platform built with **Next.js** and **Supabase**.
 - Booking system with authentication
 - Multilingual (EN/AR) support
 
-### 🛒 [SmartCart](https://smartcart-final.netlify.app/)
+### 🛒 [SmartCart](https://smart-cart-nu.vercel.app/)
 
 An e-commerce shopping cart app built with **React**.
 
