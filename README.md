@@ -17,9 +17,9 @@ A modern, responsive portfolio website built with **Next.js**, **React**, and **
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** React, Next.js, TypeScript
+- **Frontend:** React, TypeScript
 - **Styling:** Tailwind CSS, Framer Motion (animations)
-- **Localization:** next-intl (EN/AR support)
+- **Localization:** react-i18next (EN/AR support)
 - **Deployment:** Vercel
 
 ---
