@@ -32,7 +32,7 @@ A hotel booking platform built with **Next.js** and **Supabase**.
 
 - Search & filter hotels by destination, date, and price
 - Booking system with authentication
-- Multilingual (EN/AR) support
+- Multilingual support (6 languages)
 
 ### 🛒 [SmartCart](https://smart-cart-nu.vercel.app/)
 
