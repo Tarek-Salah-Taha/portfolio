@@ -23,7 +23,7 @@ A modern, responsive portfolio website built with **Next.js**, **React**, and **
 - **Deployment:** Vercel
 
 ---
-
+ 
 ## 🔥 Projects Highlighted
 
 ### 🏨 [Hotelya](https://hotelya-eosin.vercel.app/)
