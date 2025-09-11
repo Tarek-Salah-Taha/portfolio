@@ -6,9 +6,9 @@ A modern, responsive portfolio website built with **Next.js**, **React**, and **
 
 ## 🚀 Features
 
-- ⚡ Built with **Next.js (App Router)** for fast performance
+- ⚡ Built with **React** for fast performance
 - 🎨 Styled using **Tailwind CSS** with dark mode support
-- 🌍 **Multilingual (EN + AR)** using `next-intl`
+- 🌍 **Multilingual (EN + AR)** 
 - 📱 Fully **responsive** (mobile-first design)
 - 🖼️ Project showcase with live demos & GitHub links
 - 🔗 Easy contact section (Email, LinkedIn, GitHub)
