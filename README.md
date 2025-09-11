@@ -6,9 +6,9 @@ A modern, responsive portfolio website built with **Next.js**, **React**, and **
 
 ## 🚀 Features
 
-- ⚡ Built with **Next.js (App Router)** for fast performance
+- ⚡ Built with **React** for fast performance
 - 🎨 Styled using **Tailwind CSS** with dark mode support
-- 🌍 **Multilingual (EN + AR)** using `next-intl`
+- 🌍 **Multilingual (EN + AR)** 
 - 📱 Fully **responsive** (mobile-first design)
 - 🖼️ Project showcase with live demos & GitHub links
 - 🔗 Easy contact section (Email, LinkedIn, GitHub)
@@ -17,13 +17,13 @@ A modern, responsive portfolio website built with **Next.js**, **React**, and **
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** React, Next.js, TypeScript
+- **Frontend:** React, TypeScript
 - **Styling:** Tailwind CSS, Framer Motion (animations)
-- **Localization:** next-intl (EN/AR support)
+- **Localization:** react-i18next (EN/AR support)
 - **Deployment:** Vercel
 
 ---
-
+ 
 ## 🔥 Projects Highlighted
 
 ### 🏨 [Hotelya](https://hotelya-eosin.vercel.app/)
@@ -32,7 +32,7 @@ A hotel booking platform built with **Next.js** and **Supabase**.
 
 - Search & filter hotels by destination, date, and price
 - Booking system with authentication
-- Multilingual (EN/AR) support
+- Multilingual support (6 languages)
 
 ### 🛒 [SmartCart](https://smart-cart-nu.vercel.app/)
 
