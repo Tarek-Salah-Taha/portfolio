@@ -8,7 +8,7 @@ A modern, responsive portfolio website built with **Next.js**, **React**, and **
 
 - ⚡ Built with **React** for fast performance
 - 🎨 Styled using **Tailwind CSS** with dark mode support
-- 🌍 **Multilingual (EN + AR)** 
+- 🌍 **Multilingual (EN + AR)**
 - 📱 Fully **responsive** (mobile-first design)
 - 🖼️ Project showcase with live demos & GitHub links
 - 🔗 Easy contact section (Email, LinkedIn, GitHub)
@@ -23,7 +23,7 @@ A modern, responsive portfolio website built with **Next.js**, **React**, and **
 - **Deployment:** Vercel
 
 ---
- 
+
 ## 🔥 Projects Highlighted
 
 ### 🏨 [Hotelya](https://hotelya-eosin.vercel.app/)
@@ -46,7 +46,7 @@ An e-commerce shopping cart app built with **React**.
 
 A personal expense tracker built with **React**, **Supabase**, and **Tailwind CSS**.
 
-- Expense management (add, edit, delete, categorize)
+- Expense management (add, edit, delete, and categorize)
 - Local storage + Supabase integration
 - Responsive design with dark/light mode
 - Multilingual (EN/AR) support
