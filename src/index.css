@@ -1,44 +1,47 @@
 @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap");
 
+/* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind base;
+/* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind components;
+/* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind utilities;
 
 /* Portfolio Design System - Modern Developer Theme */
 
 @layer base {
   :root {
-    /* Light mode */
-    --background: 220 20% 98%;
-    --foreground: 220 15% 15%;
+    /* Light mode - Premium Zinc/Slate palette */
+    --background: 240 10% 99%;
+    --foreground: 240 10% 4%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 15% 15%;
+    --card-foreground: 240 10% 4%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 15%;
+    --popover-foreground: 240 10% 4%;
 
-    --primary: 250 84% 54%;
+    --primary: 255 75% 55%; /* Richer Indigo */
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 250 100% 85%;
+    --primary-glow: 255 100% 90%;
 
-    --secondary: 220 15% 95%;
-    --secondary-foreground: 220 15% 25%;
+    --secondary: 240 5% 95%;
+    --secondary-foreground: 240 10% 20%;
 
-    --muted: 220 15% 96%;
-    --muted-foreground: 220 10% 45%;
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 5% 40%;
 
-    --accent: 270 95% 75%;
-    --accent-foreground: 220 15% 15%;
+    --accent: 260 90% 70%; /* Soft Violet */
+    --accent-foreground: 240 10% 4%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 15% 92%;
-    --input: 220 15% 94%;
-    --ring: 250 84% 54%;
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 255 75% 55%;
 
-    --radius: 0.75rem;
+    --radius: 1rem; /* Slightly more rounded for modern feel */
 
     /* Custom portfolio colors */
     --hero-gradient: linear-gradient(
@@ -76,35 +79,35 @@
   }
 
   .dark {
-    /* Dark mode */
-    --background: 220 25% 8%;
-    --foreground: 220 10% 95%;
+    /* Dark mode - Sophisticated Obsidian/Navy palette */
+    --background: 240 10% 4%;
+    --foreground: 240 5% 96%;
 
-    --card: 220 20% 12%;
-    --card-foreground: 220 10% 95%;
+    --card: 240 10% 6%;
+    --card-foreground: 240 5% 96%;
 
-    --popover: 220 20% 12%;
-    --popover-foreground: 220 10% 95%;
+    --popover: 240 10% 6%;
+    --popover-foreground: 240 5% 96%;
 
-    --primary: 250 84% 54%;
+    --primary: 255 80% 65%; /* Vibrant Indigo-Violet */
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 250 100% 85%;
+    --primary-glow: 255 100% 85%;
 
-    --secondary: 220 20% 18%;
-    --secondary-foreground: 220 10% 85%;
+    --secondary: 240 5% 12%;
+    --secondary-foreground: 240 5% 90%;
 
-    --muted: 220 20% 15%;
-    --muted-foreground: 220 10% 55%;
+    --muted: 240 5% 12%;
+    --muted-foreground: 240 5% 65%;
 
-    --accent: 270 95% 75%;
-    --accent-foreground: 220 20% 12%;
+    --accent: 260 90% 75%;
+    --accent-foreground: 240 10% 4%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 63% 31%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 20% 20%;
-    --input: 220 20% 18%;
-    --ring: 250 84% 54%;
+    --border: 240 5% 15%;
+    --input: 240 5% 15%;
+    --ring: 255 80% 65%;
 
     /* Dark mode custom colors */
     --glass-bg: hsl(220 20% 12% / 0.8);
@@ -198,5 +201,8 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    display: inline-block;
+    line-height: 1.3;
+    padding-bottom: 0.1em;
   }
 }

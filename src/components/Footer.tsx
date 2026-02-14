@@ -4,6 +4,7 @@ import { LuGithub } from "react-icons/lu";
 import { SlSocialLinkedin } from "react-icons/sl";
 import { CiMail } from "react-icons/ci";
 import { FaCircleArrowUp, FaWhatsapp } from "react-icons/fa6";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -38,48 +39,66 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-card border-t border-border">
-      <div className="container mx-auto px-4 lg:px-8 py-12">
-        {/* Social Links */}
-        <div className="flex justify-center gap-4  mb-6">
-          {socialLinks.map((link, index) => (
-            <Button
-              key={index}
-              variant="ghost"
-              size="icon"
-              asChild
-              className="rounded-full hover:bg-primary/10 hover:text-primary transition-all duration-300"
-            >
-              <a
+    <footer className="relative bg-background border-t border-primary/10 overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[50%] h-[100px] bg-primary/5 blur-[80px] -z-10" />
+
+      <div className="container mx-auto px-4 lg:px-8 py-16">
+        <div className="flex flex-col items-center">
+          {/* Brand/Logo Area */}
+          <div className="mb-10 text-center">
+            <h2 className="text-2xl font-black bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent mb-2">
+              Tarek Salah
+            </h2>
+            <div className="h-1 w-12 bg-gradient-to-r from-primary to-pink-500 mx-auto rounded-full" />
+          </div>
+
+          {/* Social Links - Glass Morphism Style */}
+          <div className="flex justify-center gap-6 mb-12">
+            {socialLinks.map((link, index) => (
+              <motion.a
+                key={index}
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                whileHover={{ y: -5, scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="group relative p-4 rounded-2xl bg-muted/30 border border-white/5 shadow-lg backdrop-blur-md transition-all duration-300 hover:text-primary hover:border-primary/30"
                 aria-label={link.label}
               >
                 {link.icon}
-              </a>
-            </Button>
-          ))}
-        </div>
+                <div className="absolute inset-0 bg-primary/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity -z-10" />
+              </motion.a>
+            ))}
+          </div>
 
-        {/* Copyright */}
-        <div className="text-center text-muted-foreground">
-          <p className="flex items-center justify-center gap-1 text-sm">
-            © {currentYear} {t("footer.me")}
-          </p>
-          <p className="text-xs mt-1">{t("footer.rights")}</p>
-        </div>
+          {/* Copyright Section */}
+          <div className="text-center space-y-3 mb-12">
+            <p className="text-muted-foreground font-medium text-lg">
+              {t("footer.me").split(' – ')[0]}
+            </p>
+            <p className="text-sm text-muted-foreground/60 max-w-md mx-auto leading-relaxed">
+              {t("footer.me").split(' – ')[1] || ""}
+            </p>
+            <p className="text-xs text-muted-foreground/40 font-mono mt-6">
+              © {currentYear} • {t("footer.rights")}
+            </p>
+          </div>
 
-        {/* Back to Top Button */}
-        <div className="text-center mt-8 pt-8 border-t border-border">
-          <Button
-            variant="ghost"
-            onClick={scrollToTop}
-            className="hover:bg-primary/10 hover:text-primary transition-all duration-300"
+          {/* Back to Top - Seamless Integration */}
+          <motion.div
+            whileHover={{ y: -5 }}
+            className="pt-8 border-t border-primary/10 w-full flex justify-center"
           >
-            <FaCircleArrowUp />
-            {t("footer.backToTop")}
-          </Button>
+            <Button
+              variant="ghost"
+              onClick={scrollToTop}
+              className="group text-muted-foreground hover:text-primary transition-all duration-300 gap-3 font-bold text-sm tracking-widest uppercase px-8 py-6 rounded-2xl"
+            >
+              <FaCircleArrowUp className="text-primary group-hover:animate-bounce" size={20} />
+              {t("footer.backToTop")}
+            </Button>
+          </motion.div>
         </div>
       </div>
     </footer>

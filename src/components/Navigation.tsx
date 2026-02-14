@@ -24,6 +24,7 @@ const Navigation = () => {
 
   const navItems = [
     { key: "about", href: "#about" },
+    { key: "services", href: "#services" },
     { key: "skills", href: "#skills" },
     { key: "projects", href: "#projects" },
     { key: "resume", href: "#resume" },
@@ -38,9 +39,8 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "glass border-b backdrop-blur-md" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "glass border-b backdrop-blur-md" : "bg-transparent"
+        }`}
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -48,7 +48,7 @@ const Navigation = () => {
           <div className="font-bold text-xl gradient-text">Portfolio</div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
               <button
                 key={item.key}
@@ -119,9 +119,8 @@ const Navigation = () => {
                 <button
                   key={item.key}
                   onClick={() => scrollToSection(item.href)}
-                  className={`${
-                    language === "ar" ? "text-right" : "text-left"
-                  } p-2 text-foreground hover:text-primary transition-colors font-medium`}
+                  className={`${language === "ar" ? "text-right" : "text-left"
+                    } p-2 text-foreground hover:text-primary transition-colors font-medium`}
                 >
                   {t(`nav.${item.key}`)}
                 </button>
