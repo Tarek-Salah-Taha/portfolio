@@ -86,6 +86,25 @@ const Projects = () => {
       live: "https://expensify-six-drab.vercel.app/",
       isFeatured: false,
     },
+    {
+      id: 4,
+      title: t("projects.luxestate.title"),
+      description: t("projects.luxestate.description"),
+      features: t("projects.luxestate.features"),
+      technologies: [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Lucide React",
+        "React Router v6",
+        "Vite"
+      ],
+      image: "/luxestate.png",
+      github: "https://github.com/Tarek-Salah-Taha/LuxEstate",
+      live: "https://lux-estate-sable.vercel.app/",
+      isFeatured: false,
+    },
   ];
 
   // Track carousel state

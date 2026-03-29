@@ -84,6 +84,17 @@ export const translations = {
       "Internationalization (English & Arabic)",
     ],
 
+    "projects.luxestate.title": "LuxEstate",
+    "projects.luxestate.description":
+      "An ultra-premium Real Estate web app offering a cinematic property browsing experience with glassmorphism UI, smooth animations, and full support for English and Arabic.",
+    "projects.luxestate.features": [
+      "Ultra-Premium Design",
+      "Cinematic Animations",
+      "Glassmorphism UI",
+      "English & Arabic Support",
+      "Responsive Architecture",
+    ],
+
     // Resume Section
     "resume.title": "Resume",
     "resume.description":
@@ -260,6 +271,17 @@ export const translations = {
       "تصميم متجاوب باستخدام Tailwind CSS",
       "الوضع الداكن والفاتح",
       "تعدد اللغات (الإنجليزية والعربية)",
+    ],
+
+    "projects.luxestate.title": "LuxEstate",
+    "projects.luxestate.description":
+      "تطبيق عقارات فائق التميز يوفر تجربة تصفح سينمائية، مع واجهة مستخدم زجاجية ورسوم متحركة سلسة ودعم كامل للغتين العربية والإنجليزية.",
+    "projects.luxestate.features": [
+      "تصميم فائق التميز",
+      "رسوم متحركة سينمائية",
+      "واجهة مستخدم زجاجية (Glassmorphism)",
+      "دعم اللغتين العربية والإنجليزية",
+      "بنية متجاوبة (Responsive)",
     ],
 
     // Resume Section
