@@ -84,6 +84,27 @@ export const translations = {
       "Internationalization (English & Arabic)",
     ],
 
+    "projects.luxestate.title": "LuxEstate",
+    "projects.luxestate.description":
+      "An ultra-premium Real Estate web app offering a cinematic property browsing experience with glassmorphism UI, smooth animations, and full support for English and Arabic.",
+    "projects.luxestate.features": [
+      "Ultra-Premium Design",
+      "Cinematic Animations",
+      "Glassmorphism UI",
+      "English & Arabic Support",
+      "Responsive Architecture",
+    ],
+
+    "projects.cairocare.title": "Cairo Care Clinic",
+    "projects.cairocare.description": "A premium, modern, and fully localized healthcare management website for Cairo Care Clinic. Providing a seamless experience for patients to explore medical services and book appointments.",
+    "projects.cairocare.features": [
+      "Full Localization (English & Arabic)",
+      "Interactive Appointment Booking",
+      "Premium Glassmorphic UI/UX",
+      "Smooth Framer Motion Animations",
+      "Expert Medical Team Showcase",
+    ],
+
     // Resume Section
     "resume.title": "Resume",
     "resume.description":
@@ -260,6 +281,27 @@ export const translations = {
       "تصميم متجاوب باستخدام Tailwind CSS",
       "الوضع الداكن والفاتح",
       "تعدد اللغات (الإنجليزية والعربية)",
+    ],
+
+    "projects.luxestate.title": "LuxEstate",
+    "projects.luxestate.description":
+      "تطبيق عقارات فائق التميز يوفر تجربة تصفح سينمائية، مع واجهة مستخدم زجاجية ورسوم متحركة سلسة ودعم كامل للغتين العربية والإنجليزية.",
+    "projects.luxestate.features": [
+      "تصميم فائق التميز",
+      "رسوم متحركة سينمائية",
+      "واجهة مستخدم زجاجية (Glassmorphism)",
+      "دعم اللغتين العربية والإنجليزية",
+      "بنية متجاوبة (Responsive)",
+    ],
+
+    "projects.cairocare.title": "عيادة كايرو كير",
+    "projects.cairocare.description": "موقع إلكتروني متميز وعصري لإدارة الرعاية الصحية لعيادة كايرو كير، يوفر تجربة سلسة للمرضى لاستكشاف الخدمات الطبية وحجز المواعيد بسهولة.",
+    "projects.cairocare.features": [
+      "تعريب كامل (إنجليزي وعربي)",
+      "حجز مواعيد تفاعلي وفوري",
+      "تصميم زجاجي عصري (Glassmorphism)",
+      "رسوم متحركة سلسة باستخدام Framer Motion",
+      "عرض ملفات الأطباء والخبرات الطبية",
     ],
 
     // Resume Section
