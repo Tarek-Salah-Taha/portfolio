@@ -104,7 +104,6 @@ export const translations = {
       "Smooth Framer Motion Animations",
       "Expert Medical Team Showcase",
     ],
-
     // Resume Section
     "resume.title": "Resume",
     "resume.description":
@@ -303,7 +302,6 @@ export const translations = {
       "رسوم متحركة سلسة باستخدام Framer Motion",
       "عرض ملفات الأطباء والخبرات الطبية",
     ],
-
     // Resume Section
     "resume.title": "السيرة الذاتية",
     "resume.description": "حمل سيرتي الذاتية لتعرف المزيد عن خبرتي ومؤهلاتي.",
