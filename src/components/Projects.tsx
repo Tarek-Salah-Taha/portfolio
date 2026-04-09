@@ -125,6 +125,27 @@ const Projects = () => {
       live: "https://cairo-care-clinic.vercel.app/",
       isFeatured: false,
     },
+    {
+      id: 6,
+      title: t("projects.homefix.title"),
+      description: t("projects.homefix.description"),
+      features: t("projects.homefix.features"),
+      technologies: [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "shadcn/ui",
+        "Framer Motion",
+        "Lucide React",
+        "React Hook Form",
+        "Zod",
+        "Vite"
+      ],
+      image: "/home-fix.png",
+      github: "https://github.com/Tarek-Salah-Taha/home-fix",
+      live: "https://home-fix-eight-pearl.vercel.app/",
+      isFeatured: false,
+    },
   ];
 
   // Track carousel state

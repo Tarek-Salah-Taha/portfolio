@@ -104,6 +104,16 @@ export const translations = {
       "Smooth Framer Motion Animations",
       "Expert Medical Team Showcase",
     ],
+
+    "projects.homefix.title": "HomeFix Egypt",
+    "projects.homefix.description": "HomeFix Egypt is a premium, high-end home services booking platform tailored for the Egyptian market. It connects over 15,000+ clients with 500+ verified professionals.",
+    "projects.homefix.features": [
+      "Full Bi-lingual Support (Native English & Arabic)",
+      "Smart Booking System",
+      "Modern UI/UX with Glassmorphism",
+      "Smooth Framer Motion Animations",
+      "Performance Optimized on Vite",
+    ],
     // Resume Section
     "resume.title": "Resume",
     "resume.description":
@@ -301,6 +311,16 @@ export const translations = {
       "تصميم زجاجي عصري (Glassmorphism)",
       "رسوم متحركة سلسة باستخدام Framer Motion",
       "عرض ملفات الأطباء والخبرات الطبية",
+    ],
+
+    "projects.homefix.title": "هوم فيكس مصر",
+    "projects.homefix.description": "هوم فيكس مصر هي منصة إلكترونية متميزة لخدمات المنازل صُممت خصيصًا للسوق المصري. تربط المنصة أكثر من 15,000 عميل مع أكثر من 500 فني وخبير معتمد.",
+    "projects.homefix.features": [
+      "دعم كامل باللغتين العربية والإنجليزية",
+      "نظام حجز ذكي ومتقدم",
+      "واجهة مستخدم عصرية بتصميم زجاجي مميز",
+      "حركات ورسوم متحركة سلسة",
+      "أداء سريع ومحسن باستخدام تقنية Vite",
     ],
     // Resume Section
     "resume.title": "السيرة الذاتية",
