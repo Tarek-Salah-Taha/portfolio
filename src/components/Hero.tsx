@@ -1,168 +1,120 @@
-import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/hooks/useLanguage";
 import { LuGithub } from "react-icons/lu";
 import { SlSocialLinkedin } from "react-icons/sl";
+import { FaWhatsapp } from "react-icons/fa6";
 import { CiMail } from "react-icons/ci";
-import { FaCircleArrowDown, FaWhatsapp } from "react-icons/fa6";
 import { motion, Variants } from "framer-motion";
 
 const Hero = () => {
   const { t } = useLanguage();
 
-  const scrollToSection = (id: string) => {
+  const scrollTo = (id: string) =>
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
 
-  const containerVariants: Variants = {
+  const container: Variants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
-    },
+    visible: { opacity: 1, transition: { staggerChildren: 0.12, delayChildren: 0.2 } },
+  };
+  const item: Variants = {
+    hidden: { y: 32, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] } },
   };
 
-  const itemVariants: Variants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { type: "spring", stiffness: 100 },
-    },
-  };
+  const socials = [
+    { icon: LuGithub, href: "https://github.com/Tarek-Salah-Taha", label: "GitHub" },
+    { icon: SlSocialLinkedin, href: "https://www.linkedin.com/in/tarek-salah-a8813b99/", label: "LinkedIn" },
+    { icon: FaWhatsapp, href: "https://wa.me/2001003535586", label: "WhatsApp" },
+    { icon: CiMail, href: "mailto:tareksalah168@gmail.com", label: "Email" },
+  ];
 
   return (
-    <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden bg-background pt-20">
-      {/* Premium Mesh Gradient Background */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+      {/* Ambient background */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/20 rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[35%] h-[45%] bg-accent/20 rounded-full blur-[100px] animate-pulse transition-all duration-1000" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-[20%] right-[10%] w-[25%] h-[25%] bg-purple-500/10 rounded-full blur-[80px]" />
-
-        {/* Animated Grid Lines */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+        <div className="absolute top-1/4 start-1/4 w-[500px] h-[500px] bg-primary/8 rounded-full blur-[120px]" />
+        <div className="absolute bottom-1/4 end-1/4 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px]" />
+        {/* Subtle grid */}
+        <div className="absolute inset-0 opacity-[0.03]"
+          style={{ backgroundImage: "linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
       </div>
 
-      {/* Floating Interactive Elements */}
-      <motion.div
-        animate={{
-          y: [0, -30, 0],
-          rotate: [0, 5, 0],
-        }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/4 right-[10%] w-12 h-12 border-2 border-primary/20 rounded-xl hidden lg:block"
-      />
-      <motion.div
-        animate={{
-          y: [0, 40, 0],
-          rotate: [0, -10, 0],
-        }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute bottom-1/3 left-[15%] w-16 h-16 border-2 border-accent/20 rounded-full hidden lg:block"
-      />
+      {/* Floating geometric accents */}
+      <motion.div animate={{ y: [0, -20, 0], rotate: [0, 6, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-1/3 right-[12%] w-10 h-10 border border-primary/20 rotate-45 hidden lg:block" />
+      <motion.div animate={{ y: [0, 24, 0] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        className="absolute bottom-1/3 left-[10%] w-5 h-5 rounded-full bg-primary/20 hidden lg:block" />
+      <motion.div animate={{ y: [0, -14, 0], rotate: [0, -8, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        className="absolute top-1/4 left-[18%] w-6 h-6 border border-primary/15 hidden lg:block" />
 
-      {/* Content Container */}
-      <div className="relative z-10 container mx-auto px-4 lg:px-8">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="text-center max-w-5xl mx-auto"
-        >
-          <motion.div variants={itemVariants} className="flex justify-center mb-8">
-            <div className="relative">
-              <span className="inline-block py-2 px-6 rounded-full bg-primary/5 text-primary text-sm font-bold tracking-widest uppercase border border-primary/10 backdrop-blur-md">
-                {t("hero.greeting")}
-              </span>
-              <div className="absolute -inset-1 bg-primary/20 blur-lg rounded-full -z-10 animate-pulse" />
-            </div>
+      <div className="container mx-auto px-6 lg:px-8 pt-20">
+        <motion.div variants={container} initial="hidden" animate="visible"
+          className="max-w-5xl mx-auto">
+
+          {/* Label */}
+          <motion.div variants={item} className="flex items-center gap-4 mb-10">
+            <span className="gold-line" />
+            <span className="section-label">{t("hero.greeting")}</span>
           </motion.div>
 
-          <motion.h1
-            variants={itemVariants}
-            className="text-6xl md:text-8xl lg:text-9xl font-black mb-8 tracking-tighter leading-[0.9]"
-          >
-            <span className="block text-foreground drop-shadow-sm">{t("hero.name").split(' ')[0]}</span>
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-500 to-pink-500 animate-gradient-x">
-              {t("hero.name").split(' ').slice(1).join(' ')}
-            </span>
+          {/* Name */}
+          <motion.h1 variants={item}
+            className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black leading-[0.88] tracking-tight mb-8">
+            <span className="block text-foreground/90">{t("hero.name").split(" ")[0]}</span>
+            <span className="block gradient-text">{t("hero.name").split(" ").slice(1).join(" ")}</span>
           </motion.h1>
 
-          <motion.h2 variants={itemVariants} className="text-2xl md:text-4xl font-bold text-foreground/90 mb-10 max-w-3xl mx-auto">
+          {/* Title */}
+          <motion.p variants={item}
+            className="text-xl md:text-2xl text-foreground/50 font-light italic mb-6 max-w-lg"
+            style={{ fontFamily: "'Playfair Display', serif" }}>
             {t("hero.title")}
-          </motion.h2>
+          </motion.p>
 
-          <motion.p variants={itemVariants} className="text-lg md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed font-medium">
+          {/* Subtitle */}
+          <motion.p variants={item}
+            className="text-base md:text-lg text-muted-foreground leading-relaxed mb-14 max-w-xl font-light">
             {t("hero.subtitle")}
           </motion.p>
 
-          {/* Premium CTA Buttons */}
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-6 justify-center mb-16 px-4">
-            <Button
-              size="lg"
-              onClick={() => scrollToSection("projects")}
-              className="group relative overflow-hidden text-lg px-10 py-8 rounded-2xl bg-primary hover:bg-primary transition-all duration-500 shadow-[0_20px_40px_-15px_rgba(var(--primary),0.5)] border-none"
-            >
-              <span className="relative z-10 flex items-center gap-2">
-                {t("hero.cta.projects")}
-                <motion.span animate={{ x: [0, 5, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>→</motion.span>
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-primary via-purple-600 to-primary bg-[length:200%_auto] animate-gradient-x opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            </Button>
-
-            <Button
-              variant="outline"
-              size="lg"
-              onClick={() => scrollToSection("contact")}
-              className="text-lg px-10 py-8 rounded-2xl border-2 border-primary/20 hover:border-primary/50 bg-background/50 backdrop-blur-xl transition-all duration-500 hover:shadow-2xl hover:-translate-y-1"
-            >
+          {/* CTAs */}
+          <motion.div variants={item} className="flex flex-wrap gap-4 mb-16">
+            <button onClick={() => scrollTo("projects")}
+              className="group relative px-8 py-4 rounded-none bg-primary text-primary-foreground text-sm font-semibold tracking-wide uppercase overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_hsl(var(--primary)/0.4)]">
+              <span className="relative z-10">{t("hero.cta.projects")}</span>
+              <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+            </button>
+            <button onClick={() => scrollTo("contact")}
+              className="px-8 py-4 rounded-none border border-foreground/20 text-foreground/70 text-sm font-semibold tracking-wide uppercase hover:border-primary/50 hover:text-primary transition-all duration-300">
               {t("hero.cta.contact")}
-            </Button>
+            </button>
           </motion.div>
 
-          {/* Social Links - Glass Morphism Style */}
-          <motion.div variants={itemVariants} className="flex justify-center gap-8">
-            {[
-              { icon: LuGithub, href: "https://github.com/Tarek-Salah-Taha", color: "hover:text-foreground" },
-              { icon: SlSocialLinkedin, href: "https://www.linkedin.com/in/tarek-salah-a8813b99/", color: "hover:text-[#0077B5]" },
-              { icon: FaWhatsapp, href: "https://wa.me/2001003535586", color: "hover:text-[#25D366]" },
-              { icon: CiMail, href: "mailto:tareksalah168@gmail.com", color: "hover:text-primary" }
-            ].map((social, index) => (
-              <motion.a
-                key={index}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ y: -8 }}
-                whileTap={{ scale: 0.9 }}
-                className={`group relative p-4 rounded-2xl bg-white/5 border border-white/10 shadow-xl backdrop-blur-md transition-all duration-500 ${social.color} text-foreground/60`}
-              >
-                <social.icon size={28} className="relative z-10" />
-                <div className="absolute inset-0 bg-primary/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity blur-md -z-10" />
-              </motion.a>
+          {/* Social links */}
+          <motion.div variants={item} className="flex items-center gap-6">
+            <span className="text-xs text-muted-foreground/50 tracking-widest uppercase font-medium hidden sm:block">{t("hero.findMe")}</span>
+            <span className="gold-line hidden sm:block" />
+            {socials.map(({ icon: Icon, href, label }) => (
+              <a key={label} href={href} target="_blank" rel="noopener noreferrer"
+                aria-label={label}
+                className="text-foreground/40 hover:text-primary transition-colors duration-300">
+                <Icon size={20} />
+              </a>
             ))}
-          </motion.div>
-
-          {/* Scroll Indicator */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 2, duration: 1 }}
-            className="absolute bottom-12 left-1/2 -translate-x-1/2 cursor-pointer hidden md:block py-6"
-            onClick={() => scrollToSection("about")}
-          >
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="w-10 h-16 rounded-full border-2 border-primary/30 p-2 flex justify-center"
-            >
-              <div className="w-1.5 h-3 bg-primary rounded-full" />
-            </motion.div>
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }}
+        className="absolute bottom-10 start-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer md:flex"
+        onClick={() => scrollTo("about")}>
+        <span className="section-label">{t("hero.scroll")}</span>
+        <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 1.8, repeat: Infinity }}
+          className="w-px h-10 bg-gradient-to-b from-primary/60 to-transparent" />
+      </motion.div>
     </section>
   );
 };

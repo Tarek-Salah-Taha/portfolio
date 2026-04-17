@@ -1,216 +1,128 @@
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
+import { useLanguage } from "@/hooks/useLanguage";
 import { useToast } from "@/hooks/usetoast";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
-import { useLanguage } from "@/hooks/useLanguage";
 import emailjs from "emailjs-com";
 import { motion } from "framer-motion";
 
 const Contact = () => {
   const { t } = useLanguage();
   const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [sending, setSending] = useState(false);
 
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
+    setSending(true);
     try {
-      await emailjs.send(
-        "service_qeoo5z9",
-        "template_ybe735t",
-        formData,
-        "Wk7LJue9Px793N7qM"
-      );
-
-      toast({
-        title: t("contact.sent"),
-        description: t("contact.thankYou"),
-      });
-
-      setFormData({ name: "", email: "", message: "" });
-    } catch (error) {
-      toast({
-        title: t("contact.error"),
-        description: t("contact.errorMessage"),
-      });
+      await emailjs.send("service_qeoo5z9", "template_ybe735t", form, "Wk7LJue9Px793N7qM");
+      toast({ title: t("contact.sent"), description: t("contact.thankYou") });
+      setForm({ name: "", email: "", message: "" });
+    } catch {
+      toast({ title: t("contact.error"), description: t("contact.errorMessage") });
     } finally {
-      setIsSubmitting(false);
+      setSending(false);
     }
   };
 
-  const contactInfo = [
-    {
-      icon: <Mail size={20} />,
-      label: "contact.emailAddress",
-      value: "tareksalah168@gmail.com",
-      href: "mailto:tareksalah168@gmail.com",
-    },
-    {
-      icon: <Phone size={20} />,
-      label: "contact.phone",
-      value: (
-        <span dir="ltr" className="inline-block">
-          +20 0100 35 35 586
-        </span>
-      ),
-      href: "tel:+2001003535586",
-    },
-    {
-      icon: <MapPin size={20} />,
-      label: "contact.location",
-      value: t("contact.city"),
-    },
+  const contactItems = [
+    { icon: Mail, label: t("contact.emailAddress"), value: "tareksalah168@gmail.com", href: "mailto:tareksalah168@gmail.com" },
+    { icon: Phone, label: t("contact.phone"), value: "+20 0100 35 35 586", href: "tel:+2001003535586" },
+    { icon: MapPin, label: t("contact.location"), value: t("contact.city"), href: null },
   ];
 
   return (
-    <section id="contact" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-4">
-            {t("contact.title")}
+    <section id="contact" className="py-32 bg-card/20 relative overflow-hidden">
+      <div className="container mx-auto px-6 lg:px-8 max-w-6xl">
+        {/* Header */}
+        <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }} transition={{ duration: 0.7 }}
+          className="mb-20">
+          <div className="flex items-center gap-4 mb-5">
+            <span className="gold-line" />
+            <span className="section-label">{t("nav.contact")}</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight max-w-lg">
+            {t("contact.build1")} <span className="gradient-text">{t("contact.build2")}</span> {t("contact.build3")}
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            {t("contact.description")}
-          </p>
         </motion.div>
 
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <Card className="glass border-primary/20 shadow-primary h-full">
-                <CardContent className="p-8">
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">{t("contact.name")}</Label>
-                      <Input
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        required
-                        className="glass"
-                      />
-                    </div>
+        <div className="grid lg:grid-cols-5 gap-16">
+          {/* Left: info */}
+          <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.7 }}
+            className="lg:col-span-2 space-y-8">
+            <p className="text-muted-foreground font-light leading-relaxed text-lg">
+              {t("contact.workDescription")}
+            </p>
 
-                    <div className="space-y-2">
-                      <Label htmlFor="email">{t("contact.email")}</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                        className="glass"
-                      />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="message">{t("contact.message")}</Label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        required
-                        rows={5}
-                        className="glass resize-none"
-                      />
-                    </div>
-
-                    <Button
-                      type="submit"
-                      variant="hero"
-                      size="lg"
-                      disabled={isSubmitting}
-                      className="w-full"
-                    >
-                      <Send size={18} className="mr-2" />
-                      {isSubmitting ? t("contact.sending") : t("contact.send")}
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Contact Information */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="space-y-6"
-            >
-              <Card className="glass border-primary/20 shadow-primary">
-                <CardContent className="p-8">
-                  <h3 className="text-xl font-semibold mb-6">
-                    {t("contact.heading")}
-                  </h3>
-                  <div className="space-y-6">
-                    {contactInfo.map((info, index) => (
-                      <div key={index} className="flex items-center gap-4">
-                        <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary transition-colors hover:bg-primary hover:text-white">
-                          {info.icon}
-                        </div>
-                        <div>
-                          <div className="text-sm text-muted-foreground">
-                            {t(info.label)}
-                          </div>
-                          <a
-                            href={info.href}
-                            className="font-medium hover:text-primary transition-colors"
-                          >
-                            {info.value}
-                          </a>
-                        </div>
-                      </div>
-                    ))}
+            <div className="space-y-6">
+              {contactItems.map(({ icon: Icon, label, value, href }) => (
+                <div key={label} className="flex items-start gap-4 group">
+                  <div className="w-10 h-10 border border-border/60 flex items-center justify-center flex-shrink-0 group-hover:border-primary/40 transition-colors duration-300">
+                    <Icon size={16} className="text-muted-foreground group-hover:text-primary transition-colors duration-300" />
                   </div>
-                </CardContent>
-              </Card>
+                  <div>
+                    <div className="text-xs text-muted-foreground/60 mb-0.5 uppercase tracking-widest font-medium">{label}</div>
+                    {href ? (
+                      <a href={href} className="text-sm text-foreground/80 hover:text-primary transition-colors duration-300 font-medium">
+                        {value}
+                      </a>
+                    ) : (
+                      <span className="text-sm text-foreground/80 font-medium">{value}</span>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
 
-              {/* Additional Info */}
-              <Card className="glass border-primary/20 shadow-primary">
-                <CardContent className="p-8">
-                  <h3 className="text-xl font-semibold mb-4">
-                    {t("contact.work")}
-                  </h3>
-                  <p className="text-muted-foreground mb-6">
-                    {t("contact.workDescription")}
-                  </p>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </div>
+          {/* Right: form */}
+          <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.1 }}
+            className="lg:col-span-3">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid sm:grid-cols-2 gap-6">
+                {/* Name */}
+                <div className="group">
+                  <label className="block text-xs text-muted-foreground/60 uppercase tracking-widest mb-2 font-medium">
+                    {t("contact.name")}
+                  </label>
+                  <input name="name" value={form.name} onChange={handleChange} required
+                    className="w-full bg-transparent border border-border/50 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/50 transition-colors duration-300"
+                    placeholder="John Doe" />
+                </div>
+                {/* Email */}
+                <div>
+                  <label className="block text-xs text-muted-foreground/60 uppercase tracking-widest mb-2 font-medium">
+                    {t("contact.email")}
+                  </label>
+                  <input name="email" type="email" value={form.email} onChange={handleChange} required
+                    className="w-full bg-transparent border border-border/50 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/50 transition-colors duration-300"
+                    placeholder="john@example.com" />
+                </div>
+              </div>
+              {/* Message */}
+              <div>
+                <label className="block text-xs text-muted-foreground/60 uppercase tracking-widest mb-2 font-medium">
+                  {t("contact.message")}
+                </label>
+                <textarea name="message" value={form.message} onChange={handleChange} required rows={6}
+                  className="w-full bg-transparent border border-border/50 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/50 transition-colors duration-300 resize-none"
+                  placeholder="Tell me about your project..." />
+              </div>
+              {/* Submit */}
+              <button type="submit" disabled={sending}
+                className="group flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground text-sm font-semibold tracking-wide uppercase hover:bg-primary/90 transition-all duration-300 disabled:opacity-60">
+                <span>{sending ? t("contact.sending") : t("contact.send")}</span>
+                <Send size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+              </button>
+            </form>
+          </motion.div>
         </div>
       </div>
     </section>

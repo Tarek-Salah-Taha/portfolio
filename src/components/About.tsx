@@ -1,130 +1,82 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { useLanguage } from "@/hooks/useLanguage";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 
 const About = () => {
   const { t } = useLanguage();
 
-
+  const facts = [
+    { num: "3+", label: t("stats.years") },
+    { num: "20+", label: t("stats.projects") },
+    { num: "100%", label: t("stats.clients") },
+  ];
 
   return (
-    <section id="about" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-4">
-            {t("about.title")}
-          </h2>
-        </motion.div>
+    <section id="about" className="py-32 bg-background relative overflow-hidden">
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-0 end-0 w-px h-full bg-gradient-to-b from-transparent via-primary/10 to-transparent" />
+      </div>
 
-        <div className="max-w-4xl mx-auto mb-12">
-          <Card className="glass border-primary/20 shadow-primary overflow-hidden">
-            <CardContent className="p-8 md:p-12">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  className="space-y-6"
-                >
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    {t("about.description")}
-                  </p>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    {t("about.description2")}
-                  </p>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                  className="flex justify-center"
-                >
-                  <div className="relative">
-                    <div className="w-64 h-64 bg-hero-gradient rounded-full p-1 animate-spin-slow-reverse">
-                      <div className="w-full h-full bg-background rounded-full flex items-center justify-center">
-                        <div className="w-56 h-56 bg-muted rounded-full flex items-center justify-center text-6xl overflow-hidden relative">
-                          {/* Replace emoji with an abstract gradient or keep as placeholder if no image */}
-                          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                            👨‍💻
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full animate-float"
-                      style={{ animationDelay: "1s" }}
-                    ></div>
-                    <div
-                      className="absolute -bottom-4 -left-4 w-6 h-6 bg-accent rounded-full animate-float"
-                      style={{ animationDelay: "3s" }}
-                    ></div>
-                  </div>
-                </motion.div>
+      <div className="container mx-auto px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-20 items-center max-w-6xl mx-auto">
+          {/* Left: Visual */}
+          <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}>
+            <div className="relative">
+              {/* Main card */}
+              <div className="aspect-square max-w-sm bg-muted/30 border border-border/50 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
+                <div className="relative z-10 text-center p-8">
+                  <div className="text-8xl mb-4">👨‍💻</div>
+                  <span className="section-label">{t("hero.title")}</span>
+                </div>
+                {/* Corner decorations */}
+                <div className="absolute top-0 start-0 w-8 h-8 border-t border-s border-primary/40" />
+                <div className="absolute top-0 end-0 w-8 h-8 border-t border-e border-primary/40" />
+                <div className="absolute bottom-0 start-0 w-8 h-8 border-b border-s border-primary/40" />
+                <div className="absolute bottom-0 end-0 w-8 h-8 border-b border-e border-primary/40" />
               </div>
-            </CardContent>
-          </Card>
+              {/* Floating stat card */}
+              <motion.div animate={{ y: [0, -8, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -bottom-6 -end-6 glass border border-primary/20 p-5 min-w-[140px]">
+                <div className="text-3xl font-black gradient-text" style={{ fontFamily: "'Playfair Display', serif" }}>20+</div>
+                <div className="text-xs text-muted-foreground mt-1">{t("about.projectsBuilt")}</div>
+              </motion.div>
+            </div>
+          </motion.div>
+
+          {/* Right: Content */}
+          <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 }}>
+            <div className="flex items-center gap-4 mb-6">
+              <span className="gold-line" />
+              <span className="section-label">{t("about.title")}</span>
+            </div>
+
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8 leading-tight">
+              {t("about.crafting").split(" ")[0]} {t("about.crafting").split(" ")[1]}<br />
+              <span className="gradient-text">{t("about.crafting").split(" ").slice(2).join(" ")}</span>
+            </h2>
+
+            <p className="text-muted-foreground leading-relaxed mb-6 text-lg font-light">
+              {t("about.description")}
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-10 text-lg font-light">
+              {t("about.description2")}
+            </p>
+
+            {/* Stats row */}
+            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-border/50">
+              {facts.map(({ num, label }) => (
+                <div key={label}>
+                  <div className="text-3xl font-black gradient-text mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>{num}</div>
+                  <div className="text-xs text-muted-foreground font-medium">{label}</div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
-
-
       </div>
     </section>
-  );
-};
-
-const StatCard = ({ stat, delay }: { stat: { label: string; value: number; suffix: string }; delay: number }) => {
-  const [count, setCount] = useState(0);
-  const [hasAnimated, setHasAnimated] = useState(false);
-
-  useEffect(() => {
-    if (!hasAnimated) return;
-
-    const duration = 2000;
-    const steps = 60;
-    const increment = stat.value / steps;
-    let current = 0;
-
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= stat.value) {
-        setCount(stat.value);
-        clearInterval(timer);
-      } else {
-        setCount(Math.floor(current));
-      }
-    }, duration / steps);
-
-    return () => clearInterval(timer);
-  }, [hasAnimated, stat.value]);
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay }}
-      onViewportEnter={() => setHasAnimated(true)}
-    >
-      <Card className="glass border-primary/10 hover:border-primary/30 transition-all duration-300 text-center group">
-        <CardContent className="p-6">
-          <div className="text-4xl md:text-5xl font-bold gradient-text mb-2 group-hover:scale-110 transition-transform duration-300">
-            {count}{stat.suffix}
-          </div>
-          <div className="text-sm md:text-base text-muted-foreground font-medium">
-            {stat.label}
-          </div>
-        </CardContent>
-      </Card>
-    </motion.div>
   );
 };
 

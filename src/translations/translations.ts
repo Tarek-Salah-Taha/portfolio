@@ -16,6 +16,8 @@ export const translations = {
       "Building pixel-perfect, performant, and accessible web experiences. I transform ideas into reality using the power of React, Next.js, and modern design principles.",
     "hero.cta.projects": "View Projects",
     "hero.cta.contact": "Get In Touch",
+    "hero.findMe": "Find me",
+    "hero.scroll": "Scroll",
 
     // About Section
     "about.title": "About Me",
@@ -23,6 +25,8 @@ export const translations = {
       "I'm a passionate frontend developer with expertise in modern web technologies. I love creating user-friendly interfaces and bringing designs to life.",
     "about.description2":
       "I specialize in building responsive web applications with clean, modern designs. My passion lies in creating seamless user experiences and optimizing performance.",
+    "about.projectsBuilt": "Projects Built",
+    "about.crafting": "Crafting digital experiences",
     
     // Stats
     "stats.years": "Years Experience",
@@ -123,6 +127,9 @@ export const translations = {
     "resume.experience":
       "Get a comprehensive overview of my experience, education, and achievements in web development.",
     "resume.viewOnline": "View Online",
+    "resume.available": "Available for work",
+    "resume.openTo": "Open to opportunities",
+    "resume.preview": "Resume Preview",
 
     // Contact Section
     "contact.title": "Get In Touch",
@@ -165,6 +172,7 @@ export const translations = {
     // Services Section
     "services.title": "My Services",
     "services.description": "Specialized solutions I offer to help your business grow.",
+    "services.whatIDo": "What I do",
     "services.frontend.title": "Frontend Development",
     "services.frontend.desc": "Building responsive, interactive, and high-performance user interfaces using React and Next.js.",
     "services.backend.title": "Backend Integration",
@@ -179,6 +187,22 @@ export const translations = {
     "footer.me":
       "Created by Tarek Salah – Frontend Developer specializing in React & Next.js.",
     "footer.backToTop": "Back to Top",
+    "footer.navigation": "Navigation",
+    "footer.connect": "Connect",
+    "footer.desc": "Frontend Developer specializing in React, Next.js, and modern web technologies.",
+    "projects.tags.finance": "Finance App",
+    "projects.tags.booking": "Booking Platform",
+    "projects.tags.ecommerce": "E-Commerce",
+    "projects.tags.services": "Services",
+    "projects.tags.healthcare": "Healthcare",
+    "projects.tags.realestate": "Real Estate",
+    "contact.build1": "Let's build something",
+    "contact.build2": "great",
+    "contact.build3": "together",
+    "resume.highlights.react": "Production-grade apps",
+    "resume.highlights.typescript": "Type-safe development",
+    "resume.highlights.supabase": "Backend integration",
+    "resume.highlights.i18n": "Multilingual support",
   },
   ar: {
     // Navigation
@@ -198,6 +222,8 @@ export const translations = {
       "أصمم تجربة مستخدم جميلة وعملية على الويب باستخدام React و Next.js",
     "hero.cta.projects": "عرض المشاريع",
     "hero.cta.contact": "تواصل معي",
+    "hero.findMe": "تواصل معي عبر",
+    "hero.scroll": "تصفح للأسفل",
 
     // About Section
     "about.title": "نبذة عني",
@@ -205,6 +231,8 @@ export const translations = {
       "أنا مطور واجهات أمامية شغوف، أتقن أحدث تقنيات الويب، وأسعى دائماً لابتكار تجارب رقمية مميزة تجمع بين الجمال وسهولة الاستخدام.",
     "about.description2":
       "أصمم تطبيقات ويب حديثة ومتجاوبة، تجمع بين الجمال والوظيفية، لأوفر للمستخدم تجربة سلسة وسريعة الأداء.",
+    "about.projectsBuilt": "مشاريع منجزة",
+    "about.crafting": "صناعة تجارب رقمية",
 
     // Stats
     "stats.years": "سنوات الخبرة",
@@ -228,6 +256,7 @@ export const translations = {
     // Services Section
     "services.title": "خدماتي",
     "services.description": "حلول متخصصة أقدمها لمساعدة عملك على النمو.",
+    "services.whatIDo": "ماذا أقدم",
     "services.frontend.title": "تطوير الواجهات الأمامية",
     "services.frontend.desc": "بناء واجهات مستخدم متجاوبة وتفاعلية وعالية الأداء باستخدام React و Next.js.",
     "services.backend.title": "تكامل الواجهة الخلفية",
@@ -330,6 +359,9 @@ export const translations = {
     "resume.experience":
       "احصل على نظرة عامة شاملة على خبرتي وتعليمي وإنجازاتي في تطوير الويب.",
     "resume.viewOnline": "عرض السيرة الذاتية",
+    "resume.available": "متاح للعمل",
+    "resume.openTo": "منفتح على الفرص الجديدة",
+    "resume.preview": "معاينة السيرة الذاتية",
 
     // Contact Section
     "contact.title": "تواصل معي",
@@ -359,5 +391,21 @@ export const translations = {
     "footer.me":
       "صُنع بواسطة طارق صلاح – مطوّر واجهات أمامية متخصص في React و Next.js.",
     "footer.backToTop": "العودة إلى الأعلى",
+    "footer.navigation": "تصفح الموقع",
+    "footer.connect": "تواصل معي",
+    "footer.desc": "مطور واجهات أمامية متخصص في React و Next.js وأحدث تقنيات الويب.",
+    "projects.tags.finance": "تطبيق مالي",
+    "projects.tags.booking": "منصة حجوزات",
+    "projects.tags.ecommerce": "متجر إلكتروني",
+    "projects.tags.services": "خدمات",
+    "projects.tags.healthcare": "رعاية صحية",
+    "projects.tags.realestate": "عقارات",
+    "contact.build1": "دعونا نبني شيئًا",
+    "contact.build2": "عظيمًا",
+    "contact.build3": "معًا",
+    "resume.highlights.react": "تطبيقات بمستوى الإنتاج",
+    "resume.highlights.typescript": "تطوير آمن وموثوق",
+    "resume.highlights.supabase": "تكامل الواجهة الخلفية",
+    "resume.highlights.i18n": "دعم متعدد اللغات",
   },
 };

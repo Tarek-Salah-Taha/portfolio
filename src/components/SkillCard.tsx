@@ -13,7 +13,7 @@ const SkillCard = ({ title, icon, items }: SkillCardProps) => {
   return (
     <Card className="group relative overflow-hidden glass border-primary/20 shadow-lg hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-500 h-full flex flex-col">
       {/* Decorative gradient background */}
-      <div className="absolute top-0 right-0 -mr-16 -mt-16 w-32 h-32 bg-primary/10 rounded-full blur-3xl group-hover:bg-primary/20 transition-colors duration-500" />
+      <div className="absolute top-0 end-0 -me-16 -mt-16 w-32 h-32 bg-primary/10 rounded-full blur-3xl group-hover:bg-primary/20 transition-colors duration-500" />
 
       <CardHeader className="relative z-10 flex flex-col items-center sm:items-start text-center sm:text-start pt-10 pb-4">
         <div className="relative mb-8 group-hover:scale-110 group-hover:-rotate-6 transition-all duration-700 ease-out">

@@ -20,7 +20,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
       const saved = localStorage.getItem('theme') as Theme;
       return saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     }
-    return 'light';
+    return 'dark';
   });
 
   useEffect(() => {

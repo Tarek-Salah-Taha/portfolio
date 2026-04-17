@@ -14,14 +14,14 @@ export default {
     container: {
       center: true,
       padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
+      screens: { "2xl": "1400px" },
     },
     extend: {
       fontFamily: {
-        sans: ["Cairo", "sans-serif"],
-        mono: ["Poppins", "monospace"],
+        sans: ["DM Sans", "sans-serif"],
+        serif: ["Playfair Display", "Georgia", "serif"],
+        mono: ["DM Mono", "monospace"],
+        display: ["Playfair Display", "Georgia", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -77,10 +77,6 @@ export default {
         primary: "var(--shadow-primary)",
         glow: "var(--shadow-glow)",
       },
-      transitionTimingFunction: {
-        smooth: "var(--transition-smooth)",
-        spring: "var(--transition-spring)",
-      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -91,7 +87,6 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
         "spin-slow": "spin 8s linear infinite",
         "spin-slow-reverse": "spin-reverse 8s linear infinite",
-        "gradient-x": "gradient-x 15s ease infinite",
       },
       keyframes: {
         "accordion-down": {
@@ -104,16 +99,6 @@ export default {
         },
         "spin-reverse": {
           to: { transform: "rotate(-360deg)" },
-        },
-        "gradient-x": {
-          "0%, 100%": {
-            "background-size": "200% 200%",
-            "background-position": "left center",
-          },
-          "50%": {
-            "background-size": "200% 200%",
-            "background-position": "right center",
-          },
         },
       },
     },

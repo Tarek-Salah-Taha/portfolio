@@ -1,168 +1,111 @@
 import { useLanguage } from "@/hooks/useLanguage";
-import SkillCard from "./SkillCard";
-import {
-  Monitor,
-  Layers,
-  Paintbrush,
-  Wrench,
-  Database,
-  Globe,
-  Rocket,
-  Box,
-  Code2,
-  Cpu,
-  Terminal,
-  Smartphone,
-  Cloud,
-} from "lucide-react";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaGithub } from "react-icons/fa";
 import { SiTypescript, SiJavascript, SiTailwindcss, SiNextdotjs, SiSupabase, SiRedux } from "react-icons/si";
 
 const Skills = () => {
   const { t } = useLanguage();
 
-  const skills = {
-    "skills.core": {
-      icon: <Monitor className="w-full h-full" />,
-      items: ["HTML5 & CSS3", "JavaScript (ES6+)", "TypeScript"],
+  const categories = [
+    {
+      label: t("skills.core"),
+      items: ["HTML5 & CSS3", "JavaScript ES6+", "TypeScript"],
     },
-    "skills.frameworks": {
-      icon: <Layers className="w-full h-full" />,
-      items: [
-        "React",
-        "Next.js",
-        "Redux Toolkit",
-        "TanStack React Query",
-        "React Hook Form",
-      ],
+    {
+      label: t("skills.frameworks"),
+      items: ["React", "Next.js", "Redux Toolkit", "TanStack Query", "React Hook Form"],
     },
-    "skills.styling": {
-      icon: <Paintbrush className="w-full h-full" />,
-      items: ["Tailwind CSS", "CSS Animations & Transitions", "Framer Motion"],
+    {
+      label: t("skills.styling"),
+      items: ["Tailwind CSS", "Framer Motion", "CSS Animations"],
     },
-    "skills.toolsWorkflow": {
-      icon: <Wrench className="w-full h-full" />,
-      items: ["Git & GitHub", "VS Code", "npm / yarn / pnpm", "Vite"],
+    {
+      label: t("skills.toolsWorkflow"),
+      items: ["Git & GitHub", "Vite", "npm / yarn", "VS Code"],
     },
-    "skills.backend": {
-      icon: <Database className="w-full h-full" />,
-      items: ["Supabase", "SQL Basics"],
+    {
+      label: t("skills.backend"),
+      items: ["Supabase", "SQL Basics", "REST APIs"],
     },
-    "skills.specialized": {
-      icon: <Globe className="w-full h-full" />,
-      items: [
-        "Internationalization (i18n)",
-        "Responsive Design",
-        "Dark Mode",
-        "SEO Optimization",
-      ],
+    {
+      label: t("skills.specialized"),
+      items: ["i18n / RTL", "Responsive Design", "SEO", "Dark Mode"],
     },
-    "skills.performance": {
-      icon: <Rocket className="w-full h-full" />,
-      items: ["Code Splitting", "Lazy Loading", "Image Optimization"],
-    },
-    "skills.data": {
-      icon: <Box className="w-full h-full" />,
-      items: [
-        "LocalStorage",
-        "API Integration",
-        "Pagination & Infinite Scroll",
-        "Filtering & Sorting",
-        "Reusable Hooks",
-        "Reusable Modals",
-      ],
-    },
-  };
-
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants: Variants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { type: "spring", stiffness: 100 },
-    },
-  };
-
-  const marqueeIcons = [
-    { icon: FaReact, color: "text-blue-400" },
-    { icon: SiNextdotjs, color: "text-white dark:text-white" },
-    { icon: SiTypescript, color: "text-blue-600" },
-    { icon: SiJavascript, color: "text-yellow-400" },
-    { icon: SiTailwindcss, color: "text-cyan-400" },
-    { icon: FaNodeJs, color: "text-green-500" },
-    { icon: SiSupabase, color: "text-emerald-500" },
-    { icon: SiRedux, color: "text-purple-500" },
-    { icon: FaHtml5, color: "text-orange-500" },
-    { icon: FaCss3Alt, color: "text-blue-500" },
-    { icon: FaGithub, color: "text-gray-700 dark:text-white" },
   ];
 
+  const icons = [
+    { icon: FaReact, color: "#61DAFB", label: "React" },
+    { icon: SiNextdotjs, color: "#fff", label: "Next.js" },
+    { icon: SiTypescript, color: "#3178C6", label: "TypeScript" },
+    { icon: SiJavascript, color: "#F7DF1E", label: "JavaScript" },
+    { icon: SiTailwindcss, color: "#38BDF8", label: "Tailwind" },
+    { icon: FaNodeJs, color: "#68A063", label: "Node.js" },
+    { icon: SiSupabase, color: "#3ECF8E", label: "Supabase" },
+    { icon: SiRedux, color: "#764ABC", label: "Redux" },
+    { icon: FaHtml5, color: "#E34F26", label: "HTML5" },
+    { icon: FaCss3Alt, color: "#264DE4", label: "CSS3" },
+    { icon: FaGithub, color: "#aaa", label: "GitHub" },
+  ];
+
+  const doubled = [...icons, ...icons];
+
   return (
-    <section id="skills" className="py-24 bg-background overflow-hidden">
-      <div className="container mx-auto px-4 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-6">
-            {t("skills.title")}
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            {t("skills.technologies")}
-          </p>
+    <section id="skills" className="py-32 bg-background overflow-hidden">
+      <div className="container mx-auto px-6 lg:px-8">
+        {/* Header */}
+        <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }} transition={{ duration: 0.7 }}
+          className="max-w-6xl mx-auto mb-20">
+          <div className="flex items-center gap-4 mb-5">
+            <span className="gold-line" />
+            <span className="section-label">{t("nav.skills")}</span>
+          </div>
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+              {t("skills.title").split(" ")[0]} <span className="gradient-text">{t("skills.title").split(" ").slice(1).join(" ")}</span>
+            </h2>
+            <p className="text-muted-foreground text-sm max-w-xs font-light leading-relaxed sm:text-end">
+              {t("skills.technologies")}
+            </p>
+          </div>
         </motion.div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-20"
-        >
-          {Object.entries(skills).map(([title, { icon, items }]) => (
-            <motion.div key={title} variants={itemVariants} className="h-full">
-              <SkillCard title={title} icon={icon} items={items} />
+        {/* Skills grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-24">
+          {categories.map(({ label, items }, i) => (
+            <motion.div key={label}
+              initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.08 }}
+              className="group p-6 border border-border/50 hover:border-primary/30 transition-all duration-400 bg-card/20 hover:bg-card/40">
+              <div className="flex items-center gap-3 mb-5">
+                <span className="text-primary text-xs font-bold tracking-widest uppercase">{String(i + 1).padStart(2, "0")}</span>
+                <span className="h-px flex-1 bg-border/50 group-hover:bg-primary/20 transition-colors duration-300" />
+                <span className="text-sm font-semibold text-foreground/80">{label}</span>
+              </div>
+              <ul className="space-y-2">
+                {items.map(skill => (
+                  <li key={skill} className="flex items-center gap-2 text-sm text-muted-foreground font-light">
+                    <span className="w-1 h-1 rounded-full bg-primary/60" />
+                    {skill}
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
 
-        {/* Infinite Marquee */}
-        <div className="relative w-full overflow-hidden py-10 bg-muted/20 -mx-4 lg:-mx-8">
-          <div className="flex w-full absolute left-0 top-0 h-full items-center">
-            {/* Gradient Masks */}
-            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10"></div>
-          </div>
-
-          <motion.div
-            className="flex gap-16 min-w-max"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{
-              repeat: Infinity,
-              ease: "linear",
-              duration: 30
-            }}
-          >
-            {[...marqueeIcons, ...marqueeIcons, ...marqueeIcons].map((item, index) => (
-              <div key={index} className="flex flex-col items-center justify-center group cursor-pointer hover:scale-110 transition-transform duration-300">
-                <item.icon className={`text-5xl ${item.color} drop-shadow-lg opacity-80 group-hover:opacity-100 transition-opacity`} />
+        {/* Icon marquee */}
+        <div className="relative overflow-hidden py-6">
+          <div className="absolute start-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10" />
+          <div className="absolute end-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10" />
+          <div className="marquee-track gap-14">
+            {doubled.map(({ icon: Icon, color, label }, i) => (
+              <div key={i} className="flex flex-col items-center gap-2 flex-shrink-0 opacity-50 hover:opacity-100 transition-opacity duration-300">
+                <Icon style={{ color, fontSize: 36 }} />
+                <span className="text-xs text-muted-foreground font-medium">{label}</span>
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

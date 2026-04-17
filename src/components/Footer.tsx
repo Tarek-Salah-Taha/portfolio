@@ -1,104 +1,76 @@
 import { useLanguage } from "@/hooks/useLanguage";
-import { Button } from "@/components/ui/button";
 import { LuGithub } from "react-icons/lu";
 import { SlSocialLinkedin } from "react-icons/sl";
 import { CiMail } from "react-icons/ci";
-import { FaCircleArrowUp, FaWhatsapp } from "react-icons/fa6";
+import { FaWhatsapp } from "react-icons/fa6";
 import { motion } from "framer-motion";
 
 const Footer = () => {
   const { t } = useLanguage();
+  const year = new Date().getFullYear();
 
-  const currentYear = new Date().getFullYear();
-
-  const socialLinks = [
-    {
-      icon: <LuGithub size={20} />,
-      href: "https://github.com/Tarek-Salah-Taha",
-      label: "GitHub",
-    },
-    {
-      icon: <SlSocialLinkedin size={20} />,
-      href: "https://www.linkedin.com/in/tarek-salah-a8813b99/",
-      label: "LinkedIn",
-    },
-    {
-      icon: <CiMail size={20} />,
-      href: "mailto:tareksalah168@gmail.com",
-      label: "Email",
-    },
-    {
-      icon: <FaWhatsapp size={20} />,
-      href: "https://wa.me/2001003535586",
-      label: "WhatsApp",
-    },
+  const socials = [
+    { icon: LuGithub, href: "https://github.com/Tarek-Salah-Taha", label: "GitHub" },
+    { icon: SlSocialLinkedin, href: "https://www.linkedin.com/in/tarek-salah-a8813b99/", label: "LinkedIn" },
+    { icon: CiMail, href: "mailto:tareksalah168@gmail.com", label: "Email" },
+    { icon: FaWhatsapp, href: "https://wa.me/2001003535586", label: "WhatsApp" },
   ];
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  const navLinks = ["about", "services", "skills", "projects", "resume", "contact"];
 
   return (
-    <footer className="relative bg-background border-t border-primary/10 overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[50%] h-[100px] bg-primary/5 blur-[80px] -z-10" />
-
-      <div className="container mx-auto px-4 lg:px-8 py-16">
-        <div className="flex flex-col items-center">
-          {/* Brand/Logo Area */}
-          <div className="mb-10 text-center">
-            <h2 className="text-2xl font-black bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent mb-2">
-              Tarek Salah
-            </h2>
-            <div className="h-1 w-12 bg-gradient-to-r from-primary to-pink-500 mx-auto rounded-full" />
-          </div>
-
-          {/* Social Links - Glass Morphism Style */}
-          <div className="flex justify-center gap-6 mb-12">
-            {socialLinks.map((link, index) => (
-              <motion.a
-                key={index}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ y: -5, scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className="group relative p-4 rounded-2xl bg-muted/30 border border-white/5 shadow-lg backdrop-blur-md transition-all duration-300 hover:text-primary hover:border-primary/30"
-                aria-label={link.label}
-              >
-                {link.icon}
-                <div className="absolute inset-0 bg-primary/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity -z-10" />
-              </motion.a>
-            ))}
-          </div>
-
-          {/* Copyright Section */}
-          <div className="text-center space-y-3 mb-12">
-            <p className="text-muted-foreground font-medium text-lg">
-              {t("footer.me").split(' – ')[0]}
-            </p>
-            <p className="text-sm text-muted-foreground/60 max-w-md mx-auto leading-relaxed">
-              {t("footer.me").split(' – ')[1] || ""}
-            </p>
-            <p className="text-xs text-muted-foreground/40 font-mono mt-6">
-              © {currentYear} • {t("footer.rights")}
+    <footer className="border-t border-border/30 bg-background">
+      <div className="container mx-auto px-6 lg:px-8 py-16">
+        <div className="grid sm:grid-cols-3 gap-12 mb-16">
+          {/* Brand */}
+          <div>
+            <div className="font-['Playfair_Display'] text-2xl font-bold text-foreground/90 mb-3">
+              TS<span className="text-primary">.</span>
+            </div>
+            <p className="text-muted-foreground text-sm font-light leading-relaxed max-w-xs">
+              {t("footer.desc")}
             </p>
           </div>
 
-          {/* Back to Top - Seamless Integration */}
-          <motion.div
-            whileHover={{ y: -5 }}
-            className="pt-8 border-t border-primary/10 w-full flex justify-center"
-          >
-            <Button
-              variant="ghost"
-              onClick={scrollToTop}
-              className="group text-muted-foreground hover:text-primary transition-all duration-300 gap-3 font-bold text-sm tracking-widest uppercase px-8 py-6 rounded-2xl"
-            >
-              <FaCircleArrowUp className="text-primary group-hover:animate-bounce" size={20} />
-              {t("footer.backToTop")}
-            </Button>
-          </motion.div>
+          {/* Nav */}
+          <div>
+            <div className="section-label mb-5">{t("footer.navigation")}</div>
+            <ul className="space-y-2.5">
+              {navLinks.map(key => (
+                <li key={key}>
+                  <button onClick={() => document.getElementById(key)?.scrollIntoView({ behavior: "smooth" })}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200 font-light capitalize">
+                    {t(`nav.${key}`)}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Socials */}
+          <div>
+            <div className="section-label mb-5">{t("footer.connect")}</div>
+            <div className="flex flex-col gap-3">
+              {socials.map(({ icon: Icon, href, label }) => (
+                <a key={label} href={href} target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors duration-200 group">
+                  <Icon size={15} className="flex-shrink-0" />
+                  <span className="font-light">{label}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom */}
+        <div className="pt-8 border-t border-border/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-muted-foreground/50 font-light">
+            © {year} Tarek Salah. {t("footer.rights")}
+          </p>
+          <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="text-xs text-muted-foreground/50 hover:text-primary transition-colors duration-300 font-medium uppercase tracking-widest">
+            {t("footer.backToTop")} ↑
+          </button>
         </div>
       </div>
     </footer>
