@@ -63,8 +63,8 @@ const Projects = () => {
       description: t("projects.homefix.description"),
       technologies: ["React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Framer Motion", "React Hook Form"],
       image: "/homefix.png",
-      github: "#",
-      live: "#",
+      github: "https://github.com/Tarek-Salah-Taha/home-fix",
+      live: "https://home-fix-eight-pearl.vercel.app/",
       tag: t("projects.tags.services"),
     },
   ];

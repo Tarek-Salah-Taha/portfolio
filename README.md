@@ -52,6 +52,32 @@ A personal expense tracker built with **React**, **Supabase**, and **Tailwind CS
 - Multilingual (EN/AR) support
 - Charts & statistics visualization
 
+### 🏢 [LuxEstate](https://lux-estate-sable.vercel.app/)
+
+An ultra-premium Real Estate web app offering a cinematic property browsing experience.
+
+- Glassmorphism UI with smooth Framer Motion animations
+- Full support for English and Arabic localization
+- Ultra-Premium and responsive design architecture
+
+### 🏥 [Cairo Care Clinic](https://cairo-care-clinic.vercel.app/)
+
+A premium, modern healthcare management website for Cairo Care Clinic.
+
+- Interactive appointment booking
+- Expert medical team showcase
+- Premium glassmorphic UI/UX with Framer Motion animations
+- Full localization (EN/AR)
+
+### 🛠️ [HomeFix Egypt](https://home-fix-eight-pearl.vercel.app/)
+
+A high-end home services booking platform connecting clients with verified professionals.
+
+- Smart booking system for the Egyptian market
+- Modern UI/UX with glassmorphism and smooth animations
+- Full bi-lingual support (Native English & Arabic)
+- Performance optimized on Vite
+
 ---
 
 ## 📬 Contact
